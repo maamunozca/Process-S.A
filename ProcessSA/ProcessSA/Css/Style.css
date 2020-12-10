@@ -1,0 +1,143 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#Alerta, #AlertaCorreo, #AlertaCorreoContraseña, #Alerta2, #AlertaID, #AlertaSemaforo, #AlertaIDNOExistente, #aLERTANombreNoExistente, #AlertaIDNoExiste {
+    color: red;
+}
+
+#AlertaExito, #lblExito, #AlertaActualizacion, #AlertaEstado, #FechaActuaizada {
+    color: green;
+}
+
+#lblError, #lblvacio {
+    color: red;
+}
+
+.contenido {
+    background-color: #2980B9;
+}
+
+.sidebar1 {
+    /*
+    text-align: center;
+    text-align: right;
+    */
+}
+
+.info-titulo {
+    text-align: center;
+    margin: auto;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+
+.info-desc {
+    margin-top: 40px;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: center;
+    text-align: justify;
+    margin: 25px 50px 75px 100px;
+}
+
+
+.sidebar2 {
+    text-align: center;
+}
+
+.img_index {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+
+.contenido02 {
+    background-color: #A2D9CE;
+    height:auto;
+}
+
+.info_aplicaion {
+    text-align: center;
+    font-size: 125%;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/*estilo para login*/
+.login-container {
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    background-color: #A3E4D7;
+}
+/*estilo para RecuperarContraseña*/
+
+
+/*estilo para VistaFuncionario*/
+.ContenidoSubmenu {
+    background-color: burlywood;
+}
+
+.PantallaPrincipal {
+    background-color: cornflowerblue;
+}
+
+/*estilo para VistaAdmin*/
+:root {
+    --primary: #17547c;
+    --light: #fff;
+    --grey: #efefef;
+}
+
+body {
+    overflow: hidden;
+    font-weight 300;
+    color: var(--primary);
+    background-color:#dff0d8;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+#sidebar-container {
+    min-height: 100vh;
+}
+
+    #sidebar-container .logo {
+        padding: .875rem 1.25rem;
+    }
+
+    #sidebar-container .menu {
+        width: 18rem;
+    }
+
+#content {
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+
+@media(max-width: 768px) {
+    #sidebar-container {
+        display: none;
+    }
+}

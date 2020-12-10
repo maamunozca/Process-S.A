@@ -1,0 +1,45 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+#Alerta, #AlertaCorreo, #AlertaCorreoContraseña, #Alerta2, #AlertaID, #AlertaSemaforo, #AlertaIDNOExistente, #aLERTANombreNoExistente, #AlertaIDNoExiste {
+    color: red;
+}
+
+#AlertaExito, #lblExito, AlertaActualizacion {
+    color: green;
+}
+
+#lblError, #lblvacio {
+    color: red;
+}
+
+
+/*Ventana login*/
+.formularioLogin {
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    padding: 17px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+#fondoLogin {
+    background-color: #dff0d8;
+}
+/*ventana recuperar contraseña*/
+.RecuperarContra {
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    padding: 17px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
