@@ -12,25 +12,27 @@ namespace ProcessSA.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            if (Request.Params["parametro"] != null)
+            if (!IsPostBack)
             {
-                EmailTransferido.Text = Request.Params["parametro"];
-                EmailTransferido.Visible = false;
+                if (Request.Params["parametro"] != null)
+                {
+                    EmailTransferido.Text = Request.Params["parametro"];
+                    EmailTransferido.Visible = false;
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }
+
+                obtenerusuario();
+
+                ListarTareasAsignadas();
+                ListarTareasAtrasadas();
+                ListarTareasEnDesarrollo();
+                ListarTareasTerminadas();
+                ListarTareasTotal();
+
             }
-            else
-            {
-                Response.Redirect("Login.aspx");         
-            }
-
-            obtenerusuario();
-
-            ListarTareasAsignadas();
-            ListarTareasAtrasadas();
-            ListarTareasEnDesarrollo();
-            ListarTareasTerminadas();
-            ListarTareasTotal();
-
         }
 
         public void obtenerusuario()

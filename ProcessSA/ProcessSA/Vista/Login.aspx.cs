@@ -46,7 +46,7 @@ namespace ProcessSA.Vista
                     // si el rol es 2 es de funcionario 
                     else if (usuario.ID_Rol1 == 2)
                     {
-                        Response.Redirect("VistaGestionTareas.aspx?parametro=" + TXTEmail.Text);
+                        Response.Redirect("VistaFuncionario.aspx?parametro=" + TXTEmail.Text);
                     }
                 }
                 else
