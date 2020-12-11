@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormularioRechazoSubTarea.aspx.cs" Inherits="ProcessSA.Vista.FormularioRechazoSubTarea" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormularioRechazoTareaAdministrador.aspx.cs" Inherits="ProcessSA.Vista.FormularioRechazoTareaAdministrador" %>
 
 <!DOCTYPE html>
 
@@ -6,16 +6,18 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-       
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     
+
 </head>
 <body>
     <form id="form1" runat="server">
+
           <header>
     <!--Nuevo Menu horizontal-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,7 +32,7 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Funcionario</asp:LinkButton>
+        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Administrador</asp:LinkButton>
       </li>
 
       <li class="nav-item">
@@ -43,6 +45,10 @@
       <li class="nav-item">
           <asp:LinkButton ID="BtnTareasFuncionario" runat="server"  class="nav-link" OnClick="BtnTareasFuncionario_Click"  >Tus Tareas Asignadas</asp:LinkButton>
       </li>
+           
+        <li>
+          <asp:LinkButton ID="BtnDepartamento" class="nav-link" runat="server" OnClick="BtnDepartamento_Click">Departamentos</asp:LinkButton>
+      </li>
 
         <li>
             <a href="Home.aspx"  class="nav-link" >Cerrar Sesion</a>
@@ -51,14 +57,17 @@
     </ul>
 
   </div>
+
 </nav>
+          
           </header>
                         <div class="row">
                             <div class="container">
                                 <div class="col-xs-12">
                                     <div class="ContenidoAgregar">
-                                          
-                                        <h1>SubTareas Rechazadas</h1>                                  
+                                        <br />
+                                            
+                                        <h1>Tareas Rechazadas</h1>                                    
                                         <div class="form-group">
                                             <br />
                                             <asp:Label ID="Label1" runat="server" Text="Buscar :"></asp:Label>
@@ -68,7 +77,7 @@
                                             <asp:Label ID="AlertaID" runat="server" Text="Debe Ingresar Un ID Valido"></asp:Label>
                                              <asp:Label ID="AlertaIDNoExiste" runat="server" Text="El ID Ingresado No Existe, Intentelo Nuevamente"></asp:Label>
                                             <br />
-                                        <asp:Button ID="BtnBuscar" CssClass="btn btn-info btn-lg" runat="server" Text="Buscar Rechazo SubTarea" OnClick="BtnBuscar_Click" />
+                                        <asp:Button ID="BtnBuscar" CssClass="btn btn-info btn-lg" runat="server" Text="Buscar Motivo" OnClick="BtnBuscar_Click" />
                                              <br />
                                         </div>                                       
                                         <!--GridView--> 
@@ -77,7 +86,7 @@
                                                 <div class="col-xs-12">
                                                     <div class="contenidoTabla">
                                                         <div class="table-responsive">                                        
-                                                            <asp:GridView ID="GridRechazoSubTarea" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                            <asp:GridView ID="GridRechazo" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
                                                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                                                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -89,10 +98,10 @@
                                                                 <SortedDescendingHeaderStyle BackColor="#00547E" />
 
                                                                 <Columns>
-                                                                    <asp:BoundField ItemStyle-Width="15%" HeaderText="ID Rechazo" DataField="ID_RECHAZO"/>
-                                                                    <asp:BoundField ItemStyle-Width="15%" HeaderText="ID SubTarea" DataField="ID_SUBTAREA"/>
+                                                                    <asp:BoundField ItemStyle-Width="15%" HeaderText="ID Motivo" DataField="ID_MOTIVO"/>
+                                                                    <asp:BoundField ItemStyle-Width="15%" HeaderText="ID Tarea" DataField="ID_TAREA"/>
                                                                     <asp:BoundField ItemStyle-Width="15%" HeaderText="Fecha Rechazo" DataField="FECHA RECHAZO"/>
-                                                                    <asp:BoundField ItemStyle-Width="55%" HeaderText="Motivo Rechazo" DataField="MOTIVO_RECHAZO"/>
+                                                                    <asp:BoundField ItemStyle-Width="55%" HeaderText="Motivo Rechazo" DataField="MOTIVO"/>
                                                                 </Columns>
 
                                                             </asp:GridView>
@@ -103,8 +112,7 @@
                                         </div>
                                           <!--txt para Nombre SubTarea-->
                                          <div class="form-group">
-
-                                           
+                                             
                                             <asp:Label ID="Label2" runat="server" Text="Motivo :"></asp:Label>
                                             <br />
                                             <asp:TextBox ID="TXTMotivo" TextMode="MultiLine" Columns="58" Rows="5" Class="form-control col-lg-6" runat="server"></asp:TextBox>
@@ -114,13 +122,11 @@
                                         <div >
                                             <asp:Label ID="IDTRANSFERIDO" runat="server" Text="IDTRANSFERIDO"></asp:Label>
                                             <asp:Label ID="EmailTransferido" runat="server" Text="Label"></asp:Label>
-                                            <asp:Label ID="NuevoID" runat="server" Text="Label"></asp:Label>
-                                            <asp:Label ID="Filtro" runat="server" Text="Label"></asp:Label>
                                         </div>
                                          <!-- Label Alertas-->
                                         <div >
                                             <!--Alerta En Caso de que los campos No Esten Llenos-->  
-                                            <asp:Label ID="Alerta" runat="server" Text="Debe Ingresar El Motivo Del Rechazo De La SubTarea "></asp:Label>               
+                                            <asp:Label ID="Alerta" runat="server" Text="Debe Ingresar El Motivo De Rechazar La Tarea "></asp:Label>               
                                             <!--Alerta En Caso De Que los Campos Si Esten Llenados-->   
                                             <asp:Label ID="AlertaExito" runat="server" Text="Motivo Ingresado Exitosamente"></asp:Label>               
                                         </div>
@@ -129,21 +135,21 @@
                                             <asp:Button ID="BtnAgregarMotivo" Class="btn btn-primary btn-lg" runat="server" Text="+ Agregar Motivo" OnClick="BtnAgregarMotivo_Click" />
                                         </div>
 
-                                                                                 
-                                        <div class="col-md-offset-11">                                         
+                                         <div class="col-md-offset-11">                                         
                                              <br />                                              
                                              <asp:Button ID="BtnVolver"  Class="btn btn-info btn-lg" runat="server" Text="Volver" OnClick="BtnVolver_Click" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
     </form>
- 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+            
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="../bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script src="../js/script.js"></script>
 
 
-
-</body>
-</html>
+</body></html>

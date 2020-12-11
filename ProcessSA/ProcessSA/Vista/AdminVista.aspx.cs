@@ -91,16 +91,16 @@ namespace ProcessSA.Vista
 
         protected void BtnFlujo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VistaGestionTareas.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("VistaGestionTareasAdministrador.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnTodasLasTareasRechazadas_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioTodasLasTareasRechazadas.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("FormularioTodasLasTareasRechazadasAdministrador.aspx?parametro=" + EmailTransferido.Text);
         }
         protected void BtnTareasFuncionario_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("FormularioTareaFuncionarioAdministrador.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnDepartamento_Click(object sender, EventArgs e)

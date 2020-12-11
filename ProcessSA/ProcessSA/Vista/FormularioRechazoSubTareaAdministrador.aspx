@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormularioRechazoSubTarea.aspx.cs" Inherits="ProcessSA.Vista.FormularioRechazoSubTarea" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormularioRechazoSubTareaAdministrador.aspx.cs" Inherits="ProcessSA.Vista.FormularioRechazoSubTareaAdministrador" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-       
+
+           
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
@@ -30,7 +30,7 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Funcionario</asp:LinkButton>
+        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Administrador</asp:LinkButton>
       </li>
 
       <li class="nav-item">
@@ -42,6 +42,10 @@
       </li>
       <li class="nav-item">
           <asp:LinkButton ID="BtnTareasFuncionario" runat="server"  class="nav-link" OnClick="BtnTareasFuncionario_Click"  >Tus Tareas Asignadas</asp:LinkButton>
+      </li>
+           
+        <li>
+          <asp:LinkButton ID="BtnDepartamento" class="nav-link" runat="server" OnClick="BtnDepartamento_Click">Departamentos</asp:LinkButton>
       </li>
 
         <li>
@@ -139,7 +143,7 @@
                             </div>
     </form>
  
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="../bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script src="../js/script.js"></script>
 

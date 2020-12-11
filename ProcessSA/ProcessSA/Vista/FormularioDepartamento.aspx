@@ -32,7 +32,7 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Funcionario</asp:LinkButton>
+        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Administrador</asp:LinkButton>
       </li>
 
       <li class="nav-item">

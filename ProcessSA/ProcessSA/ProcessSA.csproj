@@ -189,20 +189,30 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vista\AdminVista.aspx" />
     <Content Include="Vista\FormularioAgregarTarea.aspx" />
+    <Content Include="Vista\FormularioAgregarTareaAdministrador.aspx" />
     <Content Include="Vista\FormularioAtrasoTarea.aspx" />
+    <Content Include="Vista\FormularioAtrasoTareaAdministrador.aspx" />
     <Content Include="Vista\FormularioDepartamento.aspx" />
     <Content Include="Vista\FormularioRechazoSubTarea.aspx" />
+    <Content Include="Vista\FormularioRechazoSubTareaAdministrador.aspx" />
     <Content Include="Vista\FormularioRechazoTarea.aspx" />
+    <Content Include="Vista\FormularioRechazoTareaAdministrador.aspx" />
     <Content Include="Vista\FormularioReportarProblema.aspx" />
+    <Content Include="Vista\FormularioReportarProblemaAdministrador.aspx" />
     <Content Include="Vista\FormularioSubTarea.aspx" />
+    <Content Include="Vista\FormularioSubTareaAdministrador.aspx" />
+    <Content Include="Vista\FormularioSubTareaFuncionarioAdministrador.aspx" />
     <Content Include="Vista\FormularioSubTareasFuncionario.aspx" />
+    <Content Include="Vista\FormularioTareaFuncionarioAdministrador.aspx" />
     <Content Include="Vista\FormularioTareasFuncionario.aspx" />
     <Content Include="Vista\FormularioTodasLasTareasRechazadas.aspx" />
+    <Content Include="Vista\FormularioTodasLasTareasRechazadasAdministrador.aspx" />
     <Content Include="Vista\Home.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\RecuperarContrasena.aspx" />
     <Content Include="Vista\VistaFuncionario.aspx" />
     <Content Include="Vista\VistaGestionTareas.aspx" />
+    <Content Include="Vista\VistaGestionTareasAdministrador.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -286,12 +296,26 @@
     <Compile Include="Vista\FormularioAgregarTarea.aspx.designer.cs">
       <DependentUpon>FormularioAgregarTarea.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormularioAgregarTareaAdministrador.aspx.cs">
+      <DependentUpon>FormularioAgregarTareaAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioAgregarTareaAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioAgregarTareaAdministrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormularioAtrasoTarea.aspx.cs">
       <DependentUpon>FormularioAtrasoTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\FormularioAtrasoTarea.aspx.designer.cs">
       <DependentUpon>FormularioAtrasoTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioAtrasoTareaAdministrador.aspx.cs">
+      <DependentUpon>FormularioAtrasoTareaAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioAtrasoTareaAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioAtrasoTareaAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\FormularioDepartamento.aspx.cs">
       <DependentUpon>FormularioDepartamento.aspx</DependentUpon>
@@ -307,12 +331,26 @@
     <Compile Include="Vista\FormularioRechazoSubTarea.aspx.designer.cs">
       <DependentUpon>FormularioRechazoSubTarea.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormularioRechazoSubTareaAdministrador.aspx.cs">
+      <DependentUpon>FormularioRechazoSubTareaAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioRechazoSubTareaAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioRechazoSubTareaAdministrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormularioRechazoTarea.aspx.cs">
       <DependentUpon>FormularioRechazoTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\FormularioRechazoTarea.aspx.designer.cs">
       <DependentUpon>FormularioRechazoTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioRechazoTareaAdministrador.aspx.cs">
+      <DependentUpon>FormularioRechazoTareaAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioRechazoTareaAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioRechazoTareaAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\FormularioReportarProblema.aspx.cs">
       <DependentUpon>FormularioReportarProblema.aspx</DependentUpon>
@@ -321,6 +359,13 @@
     <Compile Include="Vista\FormularioReportarProblema.aspx.designer.cs">
       <DependentUpon>FormularioReportarProblema.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormularioReportarProblemaAdministrador.aspx.cs">
+      <DependentUpon>FormularioReportarProblemaAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioReportarProblemaAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioReportarProblemaAdministrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormularioSubTarea.aspx.cs">
       <DependentUpon>FormularioSubTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,12 +373,33 @@
     <Compile Include="Vista\FormularioSubTarea.aspx.designer.cs">
       <DependentUpon>FormularioSubTarea.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormularioSubTareaAdministrador.aspx.cs">
+      <DependentUpon>FormularioSubTareaAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioSubTareaAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioSubTareaAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioSubTareaFuncionarioAdministrador.aspx.cs">
+      <DependentUpon>FormularioSubTareaFuncionarioAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioSubTareaFuncionarioAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioSubTareaFuncionarioAdministrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormularioSubTareasFuncionario.aspx.cs">
       <DependentUpon>FormularioSubTareasFuncionario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\FormularioSubTareasFuncionario.aspx.designer.cs">
       <DependentUpon>FormularioSubTareasFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioTareaFuncionarioAdministrador.aspx.cs">
+      <DependentUpon>FormularioTareaFuncionarioAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioTareaFuncionarioAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioTareaFuncionarioAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\FormularioTareasFuncionario.aspx.cs">
       <DependentUpon>FormularioTareasFuncionario.aspx</DependentUpon>
@@ -348,6 +414,13 @@
     </Compile>
     <Compile Include="Vista\FormularioTodasLasTareasRechazadas.aspx.designer.cs">
       <DependentUpon>FormularioTodasLasTareasRechazadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormularioTodasLasTareasRechazadasAdministrador.aspx.cs">
+      <DependentUpon>FormularioTodasLasTareasRechazadasAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FormularioTodasLasTareasRechazadasAdministrador.aspx.designer.cs">
+      <DependentUpon>FormularioTodasLasTareasRechazadasAdministrador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -383,6 +456,13 @@
     </Compile>
     <Compile Include="Vista\VistaGestionTareas.aspx.designer.cs">
       <DependentUpon>VistaGestionTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VistaGestionTareasAdministrador.aspx.cs">
+      <DependentUpon>VistaGestionTareasAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\VistaGestionTareasAdministrador.aspx.designer.cs">
+      <DependentUpon>VistaGestionTareasAdministrador.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

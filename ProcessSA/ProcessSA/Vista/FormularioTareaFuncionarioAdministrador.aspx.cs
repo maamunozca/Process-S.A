@@ -6,16 +6,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace ProcessSA.Vista
 {
-    public partial class FormularioTareasFuncionario : System.Web.UI.Page
+    public partial class FormularioTareaFuncionarioAdministrador : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             AlertaID.Visible = false;
             AlertaIDNoExiste.Visible = false;
             AlertaSemaforo.Visible = false;
-            
+
             if (Request.Params["parametro"] != null)
             {
                 EmailTransferido.Text = Request.Params["parametro"];
@@ -24,12 +25,14 @@ namespace ProcessSA.Vista
 
 
             ListarTarea();
+
         }
+
 
         public void ListarTarea()
         {
 
-            
+
             Controlador.ControladorTareas AuxControladorTarea = new Controlador.ControladorTareas();
 
             DataTable dt = new DataTable();
@@ -130,7 +133,7 @@ namespace ProcessSA.Vista
                     AuxControladorTarea.RechazarTarea(idrecibido);
                     ListarTarea();
 
-                    Response.Redirect("FormularioRechazoTarea.aspx?parametro=" + TXTBuscar.Text + "&parametro2="+EmailTransferido.Text);
+                    Response.Redirect("FormularioRechazoTareaAdministrador.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
 
                 }
                 else
@@ -177,26 +180,31 @@ namespace ProcessSA.Vista
 
         protected void BtnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VistaFuncionario.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("AdminVista.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VistaFuncionario.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("AdminVista.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnFlujo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VistaGestionTareas.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("VistaGestionTareasAdministrador.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnTodasLasTareasRechazadas_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioTodasLasTareasRechazadas.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("FormularioTodasLasTareasRechazadasAdministrador.aspx?parametro=" + EmailTransferido.Text);
         }
         protected void BtnTareasFuncionario_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("FormularioTareaFuncionarioAdministrador.aspx?parametro=" + EmailTransferido.Text);
+        }
+
+        protected void BtnDepartamento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FormularioDepartamento.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnReportarProblema_Click(object sender, EventArgs e)
@@ -215,7 +223,7 @@ namespace ProcessSA.Vista
                     TXTBuscar.BorderColor = System.Drawing.Color.Green;
                     AlertaIDNoExiste.Visible = false;
                     AlertaID.Visible = false;
-                    Response.Redirect("FormularioReportarProblema.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
+                    Response.Redirect("FormularioReportarProblemaAdministrador.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
 
                 }
                 else
@@ -264,7 +272,7 @@ namespace ProcessSA.Vista
                         AuxControladorTarea.AtrasoTarea(idtarea);
                         ListarTarea();
 
-                        Response.Redirect("FormularioAtrasoTarea.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
+                        Response.Redirect("FormularioAtrasoTareaAdministrador.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
                     }
                     else
                     {

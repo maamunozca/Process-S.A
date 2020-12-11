@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormularioAtrasoTarea.aspx.cs" Inherits="ProcessSA.Vista.FormularioAtrasoTarea" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormularioAtrasoTareaAdministrador.aspx.cs" Inherits="ProcessSA.Vista.FormularioAtrasoTareaAdministrador" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 
-      <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,7 +30,7 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <asp:LinkButton ID="BtnHome" class="nav-link" runat="server"  OnClick="BtnHome_Click">Home Funcionario</asp:LinkButton>
+        <asp:LinkButton ID="BtnHome" class="nav-link" runat="server"  OnClick="BtnHome_Click">Home Administrador</asp:LinkButton>
       </li>
 
       <li class="nav-item">
@@ -43,6 +43,11 @@
 
       <li class="nav-item">
           <asp:LinkButton ID="BtnTareasFuncionario" class="nav-link" runat="server" OnClick="BtnTareasFuncionario_Click"  >Tus Tareas Asignadas</asp:LinkButton>
+      </li>
+
+           
+        <li>
+          <asp:LinkButton ID="BtnDepartamento" class="nav-link" runat="server" OnClick="BtnDepartamento_Click">Departamentos</asp:LinkButton>
       </li>
 
         <li>
