@@ -92,28 +92,6 @@ namespace ProcessSA.Vista
 
             GridFlujoTarea.DataSource = dt;
             GridFlujoTarea.DataBind();
-     
-
-            /*
-            Conexion conexion = new Conexion();
-            OracleConnection conn = new OracleConnection();
-            conn = conexion.getConn();
-
-            conn.Open();
-
-
-            OracleCommand comando = new OracleCommand("ListarFlujoTarea",conn);
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("Listar", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
-            OracleDataAdapter da = new OracleDataAdapter(comando);
-            DataSet ds = new DataSet();
-
-            da.Fill(ds);
-            conn.Clone();
-
-            GridFlujoTarea.DataSource = ds;
-            GridFlujoTarea.DataBind();
-            */
 
         }
 

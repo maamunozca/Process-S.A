@@ -6,64 +6,59 @@
 <head runat="server">
     
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8">
+   
+    
+       <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../Css/cssAdmin.css">
+    <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="wrapper">
-            <div class="overlay"></div>
-            
-            <!-- Sidebar -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-                <ul class="nav sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="#">
-                            Process SA
-                        </a>
-                    </li>
+       
+         <header>
+    <!--Nuevo Menu horizontal-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-                   <li>
-                        <asp:LinkButton ID="BtnHome" runat="server"  OnClick="BtnHome_Click">Home Administrador</asp:LinkButton>
-                        </li>
-                    <li>
-                        
-                        <asp:LinkButton ID="BtnFlujo" runat="server"  OnClick="BtnFlujo_Click" >Agregar Flujo De Tarea</asp:LinkButton>
-                    </li>
+  <a class="navbar-brand" href="#">Process S.A</a>
 
-                    <li>
-                        
-                        <asp:LinkButton ID="BtnTodasLasTareasRechazadas" runat="server" OnClick="BtnTodasLasTareasRechazadas_Click" >Tareas Rechazadas</asp:LinkButton>
-                    </li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-                    <li>
-                        
-                        <asp:LinkButton ID="BtnTareasFuncionario" runat="server" OnClick="BtnTareasFuncionario_Click"  >Tus Tareas Asignadas</asp:LinkButton>
-                    </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
 
-                    <li>
-                        <a href="Home.aspx">Cerrar Sesion</a>
-                    </li>
+      <li class="nav-item">
+        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Funcionario</asp:LinkButton>
+      </li>
 
-                </ul>
-            </nav>
-            <!-- /#sidebar-wrapper -->
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
-                <!--<button type="button" class="hamburger is-closed" data-toggle="offcanvas">
-        <span class="hamb-top"></span>
-        <span class="hamb-middle"></span>
-        <span class="hamb-bottom"></span>
-    </button> -->
+      <li class="nav-item">
+        <asp:LinkButton ID="BtnFlujo" runat="server"  class="nav-link" OnClick="BtnFlujo_Click" >Agregar Flujo De Tarea</asp:LinkButton>
+      </li>
 
-                <button type="button" class="btn btn-lg custom-btn" data-toggle="offcanvas">
-                    <i class="fa fa-bars"></i>
-                </button>
+      <li class="nav-item">
+        <asp:LinkButton ID="BtnTodasLasTareasRechazadas" runat="server"  class="nav-link" OnClick="BtnTodasLasTareasRechazadas_Click" >Tareas Rechazadas</asp:LinkButton>
+      </li>
+      <li class="nav-item">
+          <asp:LinkButton ID="BtnTareasFuncionario" runat="server"  class="nav-link" OnClick="BtnTareasFuncionario_Click"  >Tus Tareas Asignadas</asp:LinkButton>
+      </li>
+
+        <li>
+          <asp:LinkButton ID="BtnDepartamento" class="nav-link" runat="server" OnClick="BtnDepartamento_Click">Departamentos</asp:LinkButton>
+      </li>
+
+        <li>
+            <a href="Home.aspx"  class="nav-link" >Cerrar Sesion</a>
+        </li>
+
+    </ul>
+
+  </div>
+</nav>
+          </header>
 
 
                 <div class="container">
@@ -119,19 +114,13 @@
                     <asp:Label ID="lbMensajeExito" runat="server"></asp:Label>
                     <asp:Label ID="EmailTransferido" runat="server" Text="Label"></asp:Label>
                 </div>
-
-
-
-
-            </div>
-            <!-- /#page-content-wrapper -->
-        </div>
     </form>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="../bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script src="../js/script.js"></script>
+
 
 </body>
 </html>

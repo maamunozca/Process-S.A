@@ -186,6 +186,10 @@ namespace ProcessSA.Vista
             Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
         }
 
+        protected void BtnDepartamento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FormularioDepartamento.aspx?parametro=" + EmailTransferido.Text);
+        }
 
     }
 }
