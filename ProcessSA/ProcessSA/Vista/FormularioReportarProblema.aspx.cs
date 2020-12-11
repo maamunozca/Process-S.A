@@ -154,7 +154,7 @@ namespace ProcessSA.Vista
 
         protected void BtnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + IDTRANSFERIDO.Text + "&parametro2=" + EmailTransferido.Text);
+            Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
 
         }
     }

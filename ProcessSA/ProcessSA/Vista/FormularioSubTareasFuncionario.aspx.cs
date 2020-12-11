@@ -28,6 +28,18 @@ namespace ProcessSA.Vista
             AlertaIDNoExiste.Visible = false;
 
             ListarSubTarea();
+
+            ActualizarPorcentajeTarea();
+        }
+
+        public void ActualizarPorcentajeTarea()
+        {
+            Controlador.ControladorFuncionario AuxControladorFuncionario = new Controlador.ControladorFuncionario();
+
+            int idrecibido = Convert.ToInt32(IDTRANSFERIDO.Text);
+
+            AuxControladorFuncionario.ActualizarPorcentajeTarea(idrecibido);
+
         }
 
         private void ListarSubTarea()
@@ -58,6 +70,7 @@ namespace ProcessSA.Vista
 
                 auxControladorSubTarea.ComenzarSubTarea(Convert.ToInt32(TXTBuscar.Text));
                 ListarSubTarea();
+                ActualizarPorcentajeTarea();
             }
         }
 
@@ -78,6 +91,7 @@ namespace ProcessSA.Vista
 
                 auxControladorSubTarea.TerminarSubTarea(Convert.ToInt32(TXTBuscar.Text));
                 ListarSubTarea();
+                ActualizarPorcentajeTarea();
             }
         }
 
@@ -98,6 +112,7 @@ namespace ProcessSA.Vista
 
                 auxControladorSubTarea.RechazarSubTarea(Convert.ToInt32(TXTBuscar.Text));
                 ListarSubTarea();
+                ActualizarPorcentajeTarea();
 
                 Response.Redirect("FormularioRechazoSubTarea.aspx?parametro=" + IDTRANSFERIDO.Text + "&parametro2=" + EmailTransferido.Text + "&parametro3=" + TXTBuscar.Text);
             }
@@ -110,25 +125,30 @@ namespace ProcessSA.Vista
 
         protected void BtnHome_Click(object sender, EventArgs e)
         {
+            
             Response.Redirect("VistaFuncionario.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnFlujo_Click(object sender, EventArgs e)
         {
+           
             Response.Redirect("VistaGestionTareas.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnTodasLasTareasRechazadas_Click(object sender, EventArgs e)
         {
+            
             Response.Redirect("FormularioTodasLasTareasRechazadas.aspx?parametro=" + EmailTransferido.Text);
         }
         protected void BtnTareasFuncionario_Click(object sender, EventArgs e)
         {
+            
             Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnVolver_Click(object sender, EventArgs e)
         {
+            ActualizarPorcentajeTarea();
             Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
         }
     }

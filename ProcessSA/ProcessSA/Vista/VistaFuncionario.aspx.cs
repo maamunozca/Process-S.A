@@ -31,6 +31,7 @@ namespace ProcessSA.Vista
                 ListarTareasEnDesarrollo();
                 ListarTareasTerminadas();
                 ListarTareasTotal();
+                ListarTareasRechazadas();
 
             }
         }
@@ -108,6 +109,20 @@ namespace ProcessSA.Vista
 
             GridTareasAtrasadas.DataSource = dt;
             GridTareasAtrasadas.DataBind();
+
+        }
+
+        public void ListarTareasRechazadas()
+        {
+
+            string email = EmailTransferido.Text;
+            Controlador.ControladorFuncionario AuxControladorFuncionario = new Controlador.ControladorFuncionario();
+
+            DataTable dt = new DataTable();
+            dt = AuxControladorFuncionario.ListarTareasRechazadas(email);
+
+            GridTareasRechazadas.DataSource = dt;
+            GridTareasRechazadas.DataBind();
 
         }
 

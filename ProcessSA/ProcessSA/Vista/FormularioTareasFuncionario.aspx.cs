@@ -22,8 +22,15 @@ namespace ProcessSA.Vista
                 EmailTransferido.Visible = false;
             }
 
+
             ListarTarea();
         }
+
+        public void ActualizarPorcentajeTarea()
+        {
+
+        }
+
 
         public void ListarTarea()
         {

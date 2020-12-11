@@ -35,8 +35,7 @@
                     <li>
                         <asp:LinkButton ID="BtnHome" runat="server"  OnClick="BtnHome_Click">Home Funcionario</asp:LinkButton>
                     </li>
-
-                     <li>
+                                         <li>
                         <asp:LinkButton ID="BtnFlujo" runat="server"  OnClick="BtnFlujo_Click" >Agregar Flujo De Tarea</asp:LinkButton>
                     </li>
                     
@@ -51,6 +50,7 @@
                      <li>
                         <a href="Home.aspx">Cerrar Sesion</a>
                     </li>
+
 
                 </ul>
 
@@ -261,7 +261,43 @@
                                     </div>
                                 </div>         
                             </div>
-                            <!--Fin de todas las tareas atrasadas-->
+                            <!--Fin de todas las tareas Rechazadas-->
+
+                             <div>
+                                <asp:Label ID="Label6" runat="server" Text="Tareas Rechazadas :"></asp:Label>
+                                <br />
+                                <br />
+                            </div>
+                                                                   
+                            <div class="row">
+                                <div class="container contenidoTabla">
+                                    <div class="col-xs-12">
+                                        <div class="contenidoTabla">
+                                            <div class="table-responsive">                                        
+                                                <asp:GridView ID="GridTareasRechazadas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                                                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                                                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                                                    <RowStyle ForeColor="#000066" />
+                                                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                                                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                                                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                                    <SortedDescendingHeaderStyle BackColor="#00547E" />
+
+                                                    <Columns>
+                                                        <asp:BoundField ItemStyle-Width="33%" HeaderText="Responsable" DataField="Responsable"/>
+                                                        <asp:BoundField ItemStyle-Width="33%" HeaderText="Estado Tarea" DataField="Estado"/>
+                                                        <asp:BoundField ItemStyle-Width="33%" HeaderText="Total" DataField="Total Tareas"/>
+                                                    </Columns>
+
+                                                </asp:GridView>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>         
+                            </div>
+                            <!--Fin de todas las tareas Rechazadas-->
                         </div>
                     </section>
                 </div>

@@ -49,12 +49,21 @@ namespace ProcessSA.Vista
                 AlertaActualizacion.Visible = false;
                 AlertaEstado.Visible = false;
                 FechaActuaizada.Visible = false;
-
+                ActualizarPorcentajeFlujo();
 
 
             }
         }
           
+        public void ActualizarPorcentajeFlujo()
+        {
+            Controlador.ControladorFuncionario AuxControladorFuncionario = new Controlador.ControladorFuncionario();
+
+            int idrecibido = Convert.ToInt32(IDTransferido.Text);
+
+            AuxControladorFuncionario.ActualizarPorcentajeFlujoTarea(idrecibido);
+
+        }
         public void limpiar()
         {
             TXTNombreTarea.Text = string.Empty;
@@ -336,6 +345,7 @@ namespace ProcessSA.Vista
                 GenerarID();
                 limpiar();
                 ListarTarea();
+                ActualizarPorcentajeFlujo();
 
             }
             else
@@ -531,7 +541,7 @@ namespace ProcessSA.Vista
                     auxControladorTarea.EliminarTarea(Convert.ToInt32(TXTBuscar.Text));
 
                     ListarTarea();
-
+                    ActualizarPorcentajeFlujo();
                 }
                 else
                 {
