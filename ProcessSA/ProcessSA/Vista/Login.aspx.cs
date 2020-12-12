@@ -36,17 +36,21 @@ namespace ProcessSA.Vista
                     usuario = auxUsuario.getUsuario(TXTEmail.Text);
                     AlertaCorreoContraseña.Visible = false;
                     Alerta.Visible = false;
-
+                    
                     // si el rol es 1 es administrador
                     if (usuario.ID_Rol1 == 1)
                     {
-                        // esto cambiara cuando se cree la de administrador
+                        Controlador.Inseguridad.Variable = TXTEmail.Text;
+
                         Response.Redirect("AdminVista.aspx?parametro=" + TXTEmail.Text);
                     }
                     // si el rol es 2 es de funcionario 
                     else if (usuario.ID_Rol1 == 2)
                     {
+                        Controlador.Inseguridad.Variable = TXTEmail.Text;
+
                         Response.Redirect("VistaFuncionario.aspx?parametro=" + TXTEmail.Text);
+
                     }
                 }
                 else

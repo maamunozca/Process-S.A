@@ -241,6 +241,7 @@
     <Compile Include="Controlador\ControladorSubTarea.cs" />
     <Compile Include="Controlador\ControladorTareas.cs" />
     <Compile Include="Controlador\ControladorUsuario.cs" />
+    <Compile Include="Controlador\Inseguridad.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
