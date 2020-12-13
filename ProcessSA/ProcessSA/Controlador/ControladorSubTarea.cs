@@ -170,6 +170,38 @@ namespace ProcessSA.Controlador
 
         }
 
+        public Boolean VerificarSubTareaAdministrador2(int idtarea, int idsubtarea)
+        {
+            Boolean existe = false;
+
+            Conexion conexion = new Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+
+            OracleCommand comando = new OracleCommand("FiltrarSubTarea", conn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("Filtrar", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
+            comando.Parameters.Add("@idtarea", OracleDbType.Int32).Value = idtarea;
+            comando.Parameters.Add("@idSubTarea", OracleDbType.Int32).Value = idsubtarea;
+
+            //OracleCommand comando = new OracleCommand("SELECT * FROM SUBTAREA WHERE ID_SUBTAREA = :idsubtarea", conn);
+
+            // comando.Parameters.Add(":idsubtarea", idsubtarea);
+
+            OracleDataReader lector = comando.ExecuteReader();
+
+            if (lector.Read())
+            {
+                existe = true;
+            }
+
+            conn.Close();
+            return existe;
+
+        }
+
 
         public DataTable FiltrarSubtareaAdministrador(int idtarea, int idsubtarea)
         {

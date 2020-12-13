@@ -103,20 +103,51 @@ namespace ProcessSA.Vista
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
+            Controlador.ControladorSubTarea AuxControladorSubTarea = new Controlador.ControladorSubTarea();
 
             if (TXTBuscar.Text.Trim() == string.Empty)
             {
                 TXTBuscar.BorderColor = System.Drawing.Color.Red;
                 AlertaID.Visible = true;
+                AlertaIDNoExiste.Visible = false;
                 ListarSubTarea();
 
             }
             else
             {
-                TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                AlertaID.Visible = false;
+                try
+                {
+                    int idrecibido = Convert.ToInt32(NuevoID.Text);
+                    int idbuscado = Convert.ToInt32(TXTBuscar.Text);
 
-                FiltrarSubtarea();
+                    if (AuxControladorSubTarea.VerificarSubTareaAdministrador2(idrecibido,idbuscado))
+                    {
+                        TXTBuscar.BorderColor = System.Drawing.Color.Green;
+                        AlertaID.Visible = false;
+                        AlertaIDNoExiste.Visible = false;
+
+                        FiltrarSubtarea();
+
+                    }
+                    else
+                    {
+                        AlertaIDNoExiste.Visible = true;
+                        AlertaID.Visible = false;
+                        TXTBuscar.BorderColor = System.Drawing.Color.Red;
+                        ListarSubTarea();
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    AlertaID.Visible = true;
+                    AlertaIDNoExiste.Visible = false;
+                    ListarSubTarea();
+
+                    TXTBuscar.BorderColor = System.Drawing.Color.Red;
+                }
+                
 
             }
 
