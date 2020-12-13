@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -76,7 +77,7 @@
                                     <div class="col-xs-12">
                                         <div class="contenidoTabla">
                                             <div class="table-responsive">                                        
-                                                <asp:GridView ID="GridTotalTareas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                <asp:GridView ID="GridTotalTareas" class="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Justify">
                                                     <FooterStyle BackColor="White" ForeColor="#000066" />
                                                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -111,8 +112,8 @@
                                 <div class="container contenidoTabla">
                                     <div class="col-xs-12">
                                         <div class="contenidoTabla">
-                                            <div class="table-responsive">                                        
-                                                <asp:GridView ID="GridTareaAsignadas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                            <div>                                        
+                                                <asp:GridView ID="GridTareaAsignadas" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
                                                     <FooterStyle BackColor="White" ForeColor="#000066" />
                                                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -150,7 +151,7 @@
                                     <div class="col-xs-12">
                                         <div class="contenidoTabla">
                                             <div class="table-responsive">                                        
-                                                <asp:GridView ID="GridTareasEnDesarrollo" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                <asp:GridView ID="GridTareasEnDesarrollo" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
                                                     <FooterStyle BackColor="White" ForeColor="#000066" />
                                                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -187,7 +188,7 @@
                                     <div class="col-xs-12">
                                         <div class="contenidoTabla">
                                             <div class="table-responsive">                                        
-                                                <asp:GridView ID="GridTareasTerminadas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                <asp:GridView ID="GridTareasTerminadas" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
                                                     <FooterStyle BackColor="White" ForeColor="#000066" />
                                                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -224,7 +225,7 @@
                                     <div class="col-xs-12">
                                         <div class="contenidoTabla">
                                             <div class="table-responsive">                                        
-                                                <asp:GridView ID="GridTareasAtrasadas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                <asp:GridView ID="GridTareasAtrasadas" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
                                                     <FooterStyle BackColor="White" ForeColor="#000066" />
                                                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -260,7 +261,7 @@
                                     <div class="col-xs-12">
                                         <div class="contenidoTabla">
                                             <div class="table-responsive">                                        
-                                                <asp:GridView ID="GridTareasRechazadas" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                <asp:GridView ID="GridTareasRechazadas" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
                                                     <FooterStyle BackColor="White" ForeColor="#000066" />
                                                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />

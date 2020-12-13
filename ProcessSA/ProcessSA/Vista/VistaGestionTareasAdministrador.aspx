@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -100,7 +101,7 @@
                                                     <div class="col">
                                                         <br />
                                                         <br />
-                                                        <asp:TextBox ID="TXTBuscar" runat="server" class="form-control" placeholder="Buscar..."></asp:TextBox>
+                                                        <asp:TextBox ID="TXTBuscar" runat="server" style="margin: 10px" class="form-control" placeholder="Buscar..."></asp:TextBox>
                                                         <asp:Label ID="lblError" runat="server" Text="El ID Ingresado No Existe "></asp:Label>
                                                         <asp:Label ID="lblExito" runat="server" Text="El Id ingresado Fue Eliminado Exitosamente"></asp:Label>
                                                         <asp:Label ID="lblvacio" runat="server" Text="Debe Ingresar Un ID"></asp:Label>
@@ -110,12 +111,12 @@
                                                         <br />
                                                         <br />
                                                                 <!--BOTON Buscar-->
-                                                        <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-lg" OnClick="BtnBuscar_Click"/> &nbsp &nbsp &nbsp
+                                                        <asp:Button ID="BtnBuscar" runat="server" style="margin: 10px" Text="Buscar" class="btn btn-primary btn-lg" OnClick="BtnBuscar_Click"/> &nbsp &nbsp &nbsp
                                                                 <!--BOTON Agregar-->
                                                         <!--<asp:Button ID="BtnAgregar" runat="server" Text="Agregar Tarea" class="btn btn-success" OnClick="BtnAgregar_Click" />&nbsp &nbsp &nbsp -->
-                                                        <asp:Button ID="BtnAgregarTarea" class="btn btn-success btn-lg" runat="server" Text="Agregar Tarea" OnClick="BtnAgregarTarea_Click" />&nbsp &nbsp &nbsp
+                                                        <asp:Button ID="BtnAgregarTarea" class="btn btn-success btn-lg" runat="server" style="margin: 10px" Text="Agregar Tarea" OnClick="BtnAgregarTarea_Click" />&nbsp &nbsp &nbsp
                                                                 <!--BOTON ELIMINAR-->
-                                                        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar Tarea"  class="btn btn-danger btn-lg" OnClick="BtnEliminar_Click"/>
+                                                        <asp:Button ID="BtnEliminar" runat="server" style="margin: 10px" Text="Eliminar Tarea"  class="btn btn-danger btn-lg" OnClick="BtnEliminar_Click"/>
                                                     </div>
                                                 </div>
                                         </div>
@@ -133,7 +134,7 @@
                                     <br />
                                     <div class="table-responsive">
 
-                                        <asp:GridView ID="GridFlujoTarea" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridFlujoTarea_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+                                        <asp:GridView ID="GridFlujoTarea" runat="server" CssClass="table-bordered table-hover table-responsive" AutoGenerateColumns="False" OnSelectedIndexChanged="GridFlujoTarea_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                                             <Columns  >
                                                 <asp:BoundField DataField="ID_Flujo_Tarea" HeaderText="ID Flujo" ItemStyle-Height="50" ItemStyle-Width="125" >
                                                     <ItemStyle Height="50px" Width="125px"></ItemStyle>

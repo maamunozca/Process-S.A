@@ -125,6 +125,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Css\cssAdmin.css" />
     <Content Include="Css\Style.css" />
+    <Content Include="Css\styleDocument.css" />
     <Content Include="Css\StyleHome.css" />
     <Content Include="Css\StyleLogin_Recuperar.css" />
     <Content Include="Default.aspx" />

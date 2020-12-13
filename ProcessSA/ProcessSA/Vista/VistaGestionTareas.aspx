@@ -8,10 +8,11 @@
     <title></title>
     
     
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -54,7 +55,9 @@
 
 </nav>
           
-          </header>                            
+          </header>  
+
+        <!--CONTENIDO-->
             <div class="row">
                                
                 <div class="container">
@@ -102,25 +105,36 @@
                                                         <asp:Label ID="lblExito" runat="server" Text="El Id ingresado Fue Eliminado Exitosamente"></asp:Label>
                                                         <asp:Label ID="lblvacio" runat="server" Text="Debe Ingresar Un ID"></asp:Label>
                                                     </div>
-                                                    
+
                                                     <div class="col">
                                                         <br />
                                                         <br />
                                                                 <!--BOTON Buscar-->
                                                         <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" class="btn btn-primary btn-lg" OnClick="BtnBuscar_Click"/> &nbsp &nbsp &nbsp
-                                                                <!--BOTON Agregar-->
-                                                        <!--<asp:Button ID="BtnAgregar" runat="server" Text="Agregar Tarea" class="btn btn-success" OnClick="BtnAgregar_Click" />&nbsp &nbsp &nbsp -->
-                                                        <asp:Button ID="BtnAgregarTarea" class="btn btn-success btn-lg" runat="server" Text="Agregar Tarea" OnClick="BtnAgregarTarea_Click" />&nbsp &nbsp &nbsp
-                                                                <!--BOTON ELIMINAR-->
-                                                        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar Tarea"  class="btn btn-danger btn-lg" OnClick="BtnEliminar_Click"/>
                                                     </div>
+                                                    
                                                 </div>
                                         </div>
-                                    </div>
-                                 
+                                    </div>                                
                                 </div>
-
                             </div>
+                                        <div class="container">
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="botones">                                                       
+                                                                <!--BOTON Agregar-->
+                                                        <!--<asp:Button ID="BtnAgregar" runat="server" Text="Agregar Tarea" class="btn btn-success" OnClick="BtnAgregar_Click" />&nbsp &nbsp &nbsp -->
+                                                        <asp:Button ID="Button3" class="btn btn-success btn-lg" runat="server" style="margin: 5px" Text="Agregar Tarea" OnClick="BtnAgregarTarea_Click" />&nbsp &nbsp &nbsp
+                                                                <!--BOTON ELIMINAR-->
+                                                        
+                                                        <asp:Button ID="Button4" runat="server" style="margin: 5px" Text="Eliminar Tarea"  class="btn btn-danger btn-lg" OnClick="BtnEliminar_Click"/>
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
  <!--tabla-->                       
                         <div class="row">
                             <div class="container contenidoTabla">

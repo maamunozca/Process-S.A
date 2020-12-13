@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
 
     
@@ -75,7 +76,7 @@
                          <div class="row">
                                 <div class="col-md-12" aria-orientation="horizontal">
                                     <div class="table-responsive">
-                                    <asp:GridView ID="gvUsuarios" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="false" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="100%" HorizontalAlign="Center">
+                                    <asp:GridView ID="gvUsuarios"  runat="server" AutoGenerateColumns="false" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="100%" HorizontalAlign="Center">
                                        <Columns>
                                             <asp:BoundField HeaderText="Rut" DataField="RUN"/>
                                             <asp:BoundField HeaderText="Nombre Usuario" DataField="NOMBRE_USUARIO"/>

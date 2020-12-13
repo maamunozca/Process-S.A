@@ -177,22 +177,22 @@ namespace ProcessSA.Vista
         protected global::System.Web.UI.WebControls.Button BtnAgregar;
 
         /// <summary>
-        /// Control BtnAgregarTarea.
+        /// Control Button3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAgregarTarea;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
-        /// Control BtnEliminar.
+        /// Control Button4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnEliminar;
+        protected global::System.Web.UI.WebControls.Button Button4;
 
         /// <summary>
         /// Control GridFlujoTarea.

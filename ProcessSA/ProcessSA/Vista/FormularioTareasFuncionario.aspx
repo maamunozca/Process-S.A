@@ -11,13 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
 </head>
 <body>
     <form id="form1" runat="server">
          <header>
     <!--Nuevo Menu horizontal-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
 
   <a class="navbar-brand" href="#">Process S.A</a>
 
@@ -75,8 +76,8 @@
                                             <asp:Label ID="AlertaIDNoExiste" runat="server" Text="El ID Ingresado No Existe, Intentelo Nuevamente"></asp:Label>
                                               <asp:Label ID="AlertaSemaforo" runat="server" Text="Aun Tiene Un Plazo Vigente"></asp:Label>
                                             <br />
-                                        <asp:Button ID="BtnBuscar" CssClass="btn btn-info btn-lg" runat="server" Text="Buscar Tarea" OnClick="BtnBuscar_Click" />&nbsp &nbsp
-                                             <asp:Button ID="BtnSubTarea" CssClass="btn btn-primary btn-lg" runat="server" Text="Ver SubTareas" OnClick="BtnSubTarea_Click" />
+                                        <asp:Button ID="BtnBuscar" CssClass="btn btn-info btn-lg" style="margin: 10px" runat="server" Text="Buscar Tarea" OnClick="BtnBuscar_Click" />&nbsp &nbsp
+                                             <asp:Button ID="BtnSubTarea" CssClass="btn btn-primary btn-lg" style="margin: 10px" runat="server" Text="Ver SubTareas" OnClick="BtnSubTarea_Click" />
                                         </div>
                                                                                  
                                         <!--GridView--> 
@@ -87,7 +88,7 @@
                                                         <br />
                                                         <br />
                                                         <div class="table-responsive">                                        
-                                                            <asp:GridView ID="GridTarea" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                            <asp:GridView ID="GridTarea" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
                                                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                                                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -119,11 +120,11 @@
                                        
                                         <div >
                                             <br />  
-                                            <asp:Button ID="BtnComenzar" Class="btn btn-info btn-lg" runat="server" Text="Comenzar Tarea" OnClick="BtnComenzar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnTerminar" Class="btn btn-success  btn-lg" runat="server"  Text="Terminar Tarea" OnClick="BtnTerminar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnRechazar" Class="btn btn-danger btn-lg" runat="server" Text="Rechazar Tarea" OnClick="BtnRechazar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnAtrasada" Class="btn btn-danger btn-lg" runat="server" Text="Tarea Atrasada" OnClick="BtnAtrasada_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnReportarProblema" Class="btn btn-danger btn-lg" runat="server" Text="Reportar Problemas" OnClick="BtnReportarProblema_Click" />
+                                            <asp:Button ID="BtnComenzar" style="margin: 5px" Class="btn btn-info btn-lg" runat="server" Text="Comenzar Tarea" OnClick="BtnComenzar_Click" />&nbsp &nbsp
+                                            <asp:Button ID="BtnTerminar" style="margin: 5px" Class="btn btn-success  btn-lg" runat="server"  Text="Terminar Tarea" OnClick="BtnTerminar_Click" />&nbsp &nbsp
+                                            <asp:Button ID="BtnRechazar" style="margin: 5px" Class="btn btn-danger btn-lg" runat="server" Text="Rechazar Tarea" OnClick="BtnRechazar_Click" />&nbsp &nbsp
+                                            <asp:Button ID="BtnAtrasada" style="margin: 5px" Class="btn btn-danger btn-lg" runat="server" Text="Tarea Atrasada" OnClick="BtnAtrasada_Click" />&nbsp &nbsp
+                                            <asp:Button ID="BtnReportarProblema" style="margin: 5px" Class="btn btn-danger btn-lg" runat="server" Text="Reportar Problemas" OnClick="BtnReportarProblema_Click" />
                                         </div>
                                         <br />
                                         <br />

@@ -1,0 +1,46 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*ESTILOS PARA EL MENU*/
+.navbar {
+    /*CAMBIA EL COLOR DE FONDO DEL MENU*/
+    background: #85C1E9 !important;
+    color: black !important;
+}
+
+.navbar .navbar-brand {
+    /*CAMBIA EL COLOR DEL NOMBRE DE "PROCESS SA"*/
+   color: black;
+}
+
+.navbar .navbar-brand:hover {
+    /*CAMBIA EL COLOR DEL NOMBRE DE "PROCESS SA" AL PASAR EL CURSOR*/
+    color: #F39C12;
+}
+
+/*------------------------------------------*/
+
+.row {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+.botones {
+    padding-bottom: 5px;
+}
+
+.btnVolver {
+    width: 110px; 
+    margin-left: 90%;
+    transform: translateX(-50%);
+}
+
+body {
+    background-color: #FCF3CF;
+}
+
+

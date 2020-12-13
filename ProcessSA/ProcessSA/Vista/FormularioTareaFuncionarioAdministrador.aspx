@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -78,8 +79,8 @@
                                             <asp:Label ID="AlertaIDNoExiste" runat="server" Text="El ID Ingresado No Existe, Intentelo Nuevamente"></asp:Label>
                                               <asp:Label ID="AlertaSemaforo" runat="server" Text="Aun Tiene Un Plazo Vigente"></asp:Label>
                                             <br />
-                                        <asp:Button ID="BtnBuscar" CssClass="btn btn-info btn-lg" runat="server" Text="Buscar Tarea" OnClick="BtnBuscar_Click" />&nbsp &nbsp
-                                             <asp:Button ID="BtnSubTarea" CssClass="btn btn-primary btn-lg" runat="server" Text="Ver SubTareas" OnClick="BtnSubTarea_Click" />
+                                        <asp:Button ID="BtnBuscar" CssClass="btn btn-info btn-lg" style="margin: 10px" runat="server" Text="Buscar Tarea" OnClick="BtnBuscar_Click" />&nbsp &nbsp
+                                             <asp:Button ID="BtnSubTarea" CssClass="btn btn-primary btn-lg" style="margin: 10px" runat="server" Text="Ver SubTareas" OnClick="BtnSubTarea_Click" />
                                         </div>
                                                                                  
                                         <!--GridView--> 
@@ -122,11 +123,11 @@
                                        
                                         <div >
                                             <br />  
-                                            <asp:Button ID="BtnComenzar" Class="btn btn-info btn-lg" runat="server" Text="Comenzar Tarea" OnClick="BtnComenzar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnTerminar" Class="btn btn-success  btn-lg" runat="server"  Text="Terminar Tarea" OnClick="BtnTerminar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnRechazar" Class="btn btn-danger btn-lg" runat="server" Text="Rechazar Tarea" OnClick="BtnRechazar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnAtrasada" Class="btn btn-danger btn-lg" runat="server" Text="Tarea Atrasada" OnClick="BtnAtrasada_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnReportarProblema" Class="btn btn-danger btn-lg" runat="server" Text="Reportar Problemas" OnClick="BtnReportarProblema_Click" />
+                                            <asp:Button ID="BtnComenzar" Class="btn btn-info btn-lg" style="margin: 10px" runat="server" Text="Comenzar Tarea" OnClick="BtnComenzar_Click" />&nbsp &nbsp
+                                            <asp:Button ID="BtnTerminar" Class="btn btn-success  btn-lg" style="margin: 10px" runat="server"  Text="Terminar Tarea" OnClick="BtnTerminar_Click" />&nbsp &nbsp
+                                            <asp:Button ID="BtnRechazar" Class="btn btn-danger btn-lg" style="margin: 10px" runat="server" Text="Rechazar Tarea" OnClick="BtnRechazar_Click" />&nbsp &nbsp
+                                            <asp:Button ID="BtnAtrasada" Class="btn btn-danger btn-lg" style="margin: 10px" runat="server" Text="Tarea Atrasada" OnClick="BtnAtrasada_Click" />&nbsp &nbsp
+                                            <asp:Button ID="BtnReportarProblema" Class="btn btn-danger btn-lg" style="margin: 10px" runat="server" Text="Reportar Problemas" OnClick="BtnReportarProblema_Click" />
                                         </div>
                                         <br />
                                         <br />
@@ -138,6 +139,12 @@
                                 </div>
                             </div>
                         </div>
+
+        <footer>
+    <br />
+    <br />
+        </footer>
+
     </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

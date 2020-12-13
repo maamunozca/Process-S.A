@@ -11,13 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
     </head>
+
 <body>
     <form id="form1" runat="server">
      <header>
     <!--Nuevo Menu horizontal-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
 
   <a class="navbar-brand" href="#">Process S.A</a>
 
@@ -79,7 +81,7 @@
                                                 <div class="col-xs-12">
                                                     <div class="contenidoTabla">
                                                         <div class="table-responsive">                                        
-                                                            <asp:GridView ID="GridRechazo" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                            <asp:GridView ID="GridRechazo" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
                                                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                                                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
