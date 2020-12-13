@@ -63,24 +63,30 @@
 
 
                 <div class="container">
-
+                    <br />
                     <h1>Crear Unidades Internas (Departamento)</h1>
+                    <br />
+                    <br />
                     <div class="form-inline my-2 my-lg-0">
                     <asp:TextBox ID="TxtBuscar" class="form-control mr-sm-2" runat="server"></asp:TextBox>
                     <asp:Button ID="btnBuscar" class="btn btn-outline-success my-2 my-sm-0" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                     </div>
-
+                    <br />
+                    <br />
 
                     <asp:Label ID="Label1" runat="server" Text="id departamento"></asp:Label>
+                    <br />
                     <asp:TextBox ID="TxtId" class="form-control" runat="server"></asp:TextBox>
-
+                    <br />
+                    <br />
                     <asp:Label ID="Label2"  runat="server" Text="nombre departamento"></asp:Label>
+                    <br />
                     <asp:TextBox ID="TxtNombreDepartamento" class="form-control" runat="server"></asp:TextBox>
                     <br />
                     <br />
 
-
-                    <asp:GridView ID="gview" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="100%">
+                    <div class="table-responsive">
+                    <asp:GridView ID="gview" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="100%">
                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                         <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
                         <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
@@ -97,6 +103,8 @@
                         </Columns>
 
                     </asp:GridView>
+                    </div>
+
                     <br />
                     <br />
 

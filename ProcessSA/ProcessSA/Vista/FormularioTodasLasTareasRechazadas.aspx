@@ -81,7 +81,7 @@
                                                 <div class="col-xs-12">
                                                     <div class="contenidoTabla">
                                                         <div class="table-responsive">                                        
-                                                            <asp:GridView ID="GridRechazo" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
+                                                            <asp:GridView ID="GridRechazo" CssClass="table table-bordered table-hover" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
                                                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                                                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />

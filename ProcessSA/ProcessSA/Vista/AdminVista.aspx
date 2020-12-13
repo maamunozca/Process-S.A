@@ -71,12 +71,14 @@
                 <div class="col-md-12">
                     <div class="ContenidoVistaAdmnin">
                          <div class="col-xs-12">
+                             <br />
                                 <h1>Usuarios Registrados</h1>
+                             <br />
                             </div>
                          <div class="row">
                                 <div class="col-md-12" aria-orientation="horizontal">
                                     <div class="table-responsive">
-                                    <asp:GridView ID="gvUsuarios"  runat="server" AutoGenerateColumns="false" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="100%" HorizontalAlign="Center">
+                                    <asp:GridView ID="gvUsuarios" CssClass="table table-bordered table-hover" runat="server" AutoGenerateColumns="false" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="100%" HorizontalAlign="Center">
                                        <Columns>
                                             <asp:BoundField HeaderText="Rut" DataField="RUN"/>
                                             <asp:BoundField HeaderText="Nombre Usuario" DataField="NOMBRE_USUARIO"/>
@@ -94,14 +96,16 @@
 
                         <div class="row">
                             <div class="col-xs-12">
+                                <br />
                                 <h1>Roles</h1>
+                                <br />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="table-responsive">
-                                <asp:GridView ID="gvRoles" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="false" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="100%" HorizontalAlign="Center">
+                                <asp:GridView ID="gvRoles" CssClass="table table-bordered table-hover" runat="server" AutoGenerateColumns="false" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="100%" HorizontalAlign="Center">
                                     <Columns>
                                     <asp:BoundField HeaderText="Nombre" DataField="NOMBRE_USUARIO"/>
                                     <asp:BoundField HeaderText="Rol" DataField="NOMBRE_ROL"/>

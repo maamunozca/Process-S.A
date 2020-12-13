@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -106,12 +107,12 @@
                                             <asp:Label ID="FechaActuaizada" runat="server" Text="Fechas Actualizadas Exitosamente"></asp:Label>
                                         <br />
                                         <br />
-                                        <asp:Button ID="BtnBuscar" Class="btn btn-primary btn-lg" runat="server" Text="Buscar Por Nombre" OnClick="BtnBuscar_Click" />&nbsp 
-                                        <asp:Button ID="BtnBuscarID" CssClass="btn btn-primary btn-lg" runat="server" Text="Buscar Por ID" OnClick="BtnBuscarID_Click" />&nbsp 
-                                        <asp:Button ID="BtnActualizarTarea" CssClass="btn btn-info btn-lg" runat="server" Text="Actualizar Tarea" OnClick="BtnActualizarTarea_Click" />&nbsp 
-                                        <asp:Button ID="BtnActualizarFechas"  CssClass="btn btn-info btn-lg" runat="server" Text="Actualizar Fechas" OnClick="BtnActualizarFechas_Click" />&nbsp
-                                        <asp:Button ID="BtnEliminarTarea" CssClass="btn btn-danger btn-lg" runat="server" Text="Eliminar Tarea " OnClick="BtnReportarProblema_Click" />&nbsp 
-                                        <asp:Button ID="BtnPasarDatos" CssClass="btn btn-primary btn-lg" runat="server" Text="Cargar Datos" OnClick="BtnPasarDatos_Click" />
+                                        <asp:Button ID="BtnBuscar" Class="btn btn-primary btn-lg" style="margin: 5px" runat="server" Text="Buscar Por Nombre" OnClick="BtnBuscar_Click" />&nbsp 
+                                        <asp:Button ID="BtnBuscarID" CssClass="btn btn-primary btn-lg" style="margin: 5px" runat="server" Text="Buscar Por ID" OnClick="BtnBuscarID_Click" />&nbsp 
+                                        <asp:Button ID="BtnActualizarTarea" CssClass="btn btn-info btn-lg" style="margin: 5px" runat="server" Text="Actualizar Tarea" OnClick="BtnActualizarTarea_Click" />&nbsp 
+                                        <asp:Button ID="BtnActualizarFechas"  CssClass="btn btn-info btn-lg" style="margin: 5px" runat="server" Text="Actualizar Fechas" OnClick="BtnActualizarFechas_Click" />&nbsp
+                                        <asp:Button ID="BtnEliminarTarea" CssClass="btn btn-danger btn-lg" style="margin: 5px" runat="server" Text="Eliminar Tarea " OnClick="BtnReportarProblema_Click" />&nbsp 
+                                        <asp:Button ID="BtnPasarDatos" CssClass="btn btn-primary btn-lg" style="margin: 5px" runat="server" Text="Cargar Datos" OnClick="BtnPasarDatos_Click" />
                                         <br />
                                         <br />
 
@@ -302,7 +303,7 @@
     </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="../bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script src="../js/script.js"></script>
 
 
