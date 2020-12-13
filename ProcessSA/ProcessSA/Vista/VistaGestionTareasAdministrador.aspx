@@ -114,9 +114,7 @@
                                                         <asp:Button ID="BtnBuscar" runat="server" style="margin: 10px" Text="Buscar" class="btn btn-primary btn-lg" OnClick="BtnBuscar_Click"/> &nbsp &nbsp &nbsp
                                                                 <!--BOTON Agregar-->
                                                         <!--<asp:Button ID="BtnAgregar" runat="server" Text="Agregar Tarea" class="btn btn-success" OnClick="BtnAgregar_Click" />&nbsp &nbsp &nbsp -->
-                                                        <asp:Button ID="BtnAgregarTarea" class="btn btn-success btn-lg" runat="server" style="margin: 10px" Text="Agregar Tarea" OnClick="BtnAgregarTarea_Click" />&nbsp &nbsp &nbsp
-                                                                <!--BOTON ELIMINAR-->
-                                                        <asp:Button ID="BtnEliminar" runat="server" style="margin: 10px" Text="Eliminar Tarea"  class="btn btn-danger btn-lg" OnClick="BtnEliminar_Click"/>
+
                                                     </div>
                                                 </div>
                                         </div>
@@ -125,6 +123,17 @@
                                 </div>
 
                             </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--BOTON AGREGAR-->
+                    <asp:Button ID="BtnAgregarTarea" class="btn btn-success btn-lg" runat="server" style="margin: 10px" Text="Agregar Tarea" OnClick="BtnAgregarTarea_Click" />&nbsp &nbsp &nbsp
+                            <!--BOTON ELIMINAR-->
+                    <asp:Button ID="BtnEliminar" runat="server" style="margin: 10px" Text="Eliminar Tarea"  class="btn btn-danger btn-lg" OnClick="BtnEliminar_Click"/>
+                </div>
+            </div>
+        </div>
  <!--tabla-->                       
                         <div class="row">
                             <div class="container contenidoTabla">
@@ -134,7 +143,7 @@
                                     <br />
                                     <div class="table-responsive">
 
-                                        <asp:GridView ID="GridFlujoTarea" runat="server" CssClass="table-bordered table-hover table-responsive" AutoGenerateColumns="False" OnSelectedIndexChanged="GridFlujoTarea_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+                                        <asp:GridView ID="GridFlujoTarea" runat="server" CssClass="table-bordered table-hover" AutoGenerateColumns="False" OnSelectedIndexChanged="GridFlujoTarea_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                                             <Columns  >
                                                 <asp:BoundField DataField="ID_Flujo_Tarea" HeaderText="ID Flujo" ItemStyle-Height="50" ItemStyle-Width="125" >
                                                     <ItemStyle Height="50px" Width="125px"></ItemStyle>

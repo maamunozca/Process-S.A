@@ -43,4 +43,6 @@ body {
     background-color: #FCF3CF;
 }
 
-
+.table-responsive{
+    display: inline-table;
+}
