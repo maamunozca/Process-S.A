@@ -306,3 +306,6 @@ C:\Users\Mario\Documents\GitHub\Process-S.A\ProcessSA\ProcessSA\obj\Debug\Proces
 C:\Users\Mario\Documents\GitHub\Process-S.A\ProcessSA\ProcessSA\obj\Debug\ProcessSA.csproj.CopyComplete
 C:\Users\Mario\Documents\GitHub\Process-S.A\ProcessSA\ProcessSA\obj\Debug\ProcessSA.dll
 C:\Users\Mario\Documents\GitHub\Process-S.A\ProcessSA\ProcessSA\obj\Debug\ProcessSA.pdb
+C:\Users\Mario\Documents\GitHub\Process-S.A\ProcessSA\ProcessSA\bin\BouncyCastle.Crypto.dll
+C:\Users\Mario\Documents\GitHub\Process-S.A\ProcessSA\ProcessSA\bin\itextsharp.dll
+C:\Users\Mario\Documents\GitHub\Process-S.A\ProcessSA\ProcessSA\bin\itextsharp.xml

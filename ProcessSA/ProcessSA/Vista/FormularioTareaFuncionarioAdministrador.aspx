@@ -80,7 +80,8 @@
                                               <asp:Label ID="AlertaSemaforo" runat="server" Text="Aun Tiene Un Plazo Vigente"></asp:Label>
                                             <br />
                                         <asp:Button ID="BtnBuscar" CssClass="btn btn-info btn-lg" style="margin: 10px" runat="server" Text="Buscar Tarea" OnClick="BtnBuscar_Click" />&nbsp &nbsp
-                                             <asp:Button ID="BtnSubTarea" CssClass="btn btn-primary btn-lg" style="margin: 10px" runat="server" Text="Ver SubTareas" OnClick="BtnSubTarea_Click" />
+                                             <asp:Button ID="BtnSubTarea" CssClass="btn btn-primary btn-lg" style="margin: 10px" runat="server" Text="Ver SubTareas" OnClick="BtnSubTarea_Click" />&nbsp &nbsp
+                                             <asp:Button ID="BtnPDF" CssClass="btn btn-info btn-lg" style="margin: 10px" runat="server" Text="Generar PDF" OnClick="BtnPDF_Click" />
                                         </div>
                                                                                  
                                         <!--GridView--> 

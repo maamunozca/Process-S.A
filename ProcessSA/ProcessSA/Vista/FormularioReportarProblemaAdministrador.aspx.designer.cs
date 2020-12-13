@@ -60,15 +60,6 @@ namespace ProcessSA.Vista
         protected global::System.Web.UI.WebControls.LinkButton BtnTareasFuncionario;
 
         /// <summary>
-        /// Control BtnDepartamento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnDepartamento;
-
-        /// <summary>
         /// Control BtnCerrarSesion.
         /// </summary>
         /// <remarks>

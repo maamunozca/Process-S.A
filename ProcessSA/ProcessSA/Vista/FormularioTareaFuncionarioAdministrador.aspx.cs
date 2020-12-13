@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 
 namespace ProcessSA.Vista
@@ -123,6 +126,81 @@ namespace ProcessSA.Vista
             Response.Redirect("FormularioSubTareaFuncionarioAdministrador.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
         }
 
-        
+
+        public DataTable dtFuncionario()
+        {
+            DataTable dt = new DataTable();
+
+            Controlador.Conexion conexion = new Controlador.Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+            OracleCommand comando = new OracleCommand("ListarTareasAdministrador", conn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("ListarTarea", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
+            OracleDataAdapter adaptador = new OracleDataAdapter(comando);
+
+            adaptador.Fill(dt);
+            adaptador.Dispose();
+
+            return dt;
+
+        }
+
+
+        protected void BtnPDF_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            Document document = new Document();
+            PdfWriter writer = PdfWriter.GetInstance(document, HttpContext.Current.Response.OutputStream);
+            dt = dtFuncionario();
+            if (dt.Rows.Count > 0)
+            {
+                document.Open();
+                Font fontTitle = FontFactory.GetFont(FontFactory.COURIER_BOLD, 25);
+                Font font9 = FontFactory.GetFont(FontFactory.TIMES, 9);
+
+
+                PdfPTable table = new PdfPTable(dt.Columns.Count);
+                document.Add(new Paragraph(20, "Reporte de Funcionarios Process S.A 2020", fontTitle));
+                document.Add(new Chunk("\n"));
+
+                float[] widths = new float[dt.Columns.Count];
+                for (int i = 0; i < dt.Columns.Count; i++)
+                    widths[i] = 6f;
+
+                table.SetWidths(widths);
+                table.WidthPercentage = 90;
+
+                PdfPCell cell = new PdfPCell(new Phrase("columns"));
+                cell.Colspan = dt.Columns.Count;
+
+                foreach (DataColumn c in dt.Columns)
+                {
+                    table.AddCell(new Phrase(c.ColumnName, font9));
+                }
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    if (dt.Rows.Count > 0)
+                    {
+                        for (int h = 0; h < dt.Columns.Count; h++)
+                        {
+                            table.AddCell(new Phrase(r[h].ToString(), font9));
+                        }
+                    }
+                }
+                document.Add(table);
+            }
+            document.Close();
+
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("content-disposition", "attachment;filename=FuncionariosProcess2020" + ".pdf");
+            HttpContext.Current.Response.Write(document);
+            Response.Flush();
+            Response.End();
+
+        }
     }
 }
