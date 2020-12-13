@@ -99,6 +99,8 @@ namespace ProcessSA.Vista
             GridSubtarea.DataBind();
 
         }
+
+
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
 

@@ -123,8 +123,62 @@ namespace ProcessSA.Vista
             }
         }
 
+        public void FiltrarSubtarea()
+        {
+            int idRecibido = Convert.ToInt32(IDTRANSFERIDO.Text);
+            Controlador.ControladorSubTarea auxControladorSubTarea = new Controlador.ControladorSubTarea();
+
+            DataTable dt = new DataTable();
+            dt = auxControladorSubTarea.FiltrarSubtareaAdministrador(idRecibido, Convert.ToInt32(TXTBuscar.Text));
+            GridSubtarea.DataSource = dt;
+            GridSubtarea.DataBind();
+
+        }
+
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
+            Controlador.ControladorSubTarea AuxControladorSubTarea = new Controlador.ControladorSubTarea();
+
+            if (TXTBuscar.Text.Trim() == string.Empty)
+            {
+                TXTBuscar.BorderColor = System.Drawing.Color.Red;
+                AlertaID.Visible = true;
+                AlertaIDNoExiste.Visible = false;
+                ListarSubTarea();
+
+            }
+            else
+            {
+
+                try
+                {
+                    if (AuxControladorSubTarea.VerificarSubTareaAdministrador(Convert.ToInt32(TXTBuscar.Text), Convert.ToInt32(IDTRANSFERIDO.Text)))
+                    {
+                        TXTBuscar.BorderColor = System.Drawing.Color.Green;
+                        AlertaID.Visible = false;
+                        AlertaIDNoExiste.Visible = false;
+                        FiltrarSubtarea();
+                    }
+                    else
+                    {
+                        TXTBuscar.BorderColor = System.Drawing.Color.Red;
+                        AlertaIDNoExiste.Visible = true;
+                        AlertaID.Visible = false;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    TXTBuscar.BorderColor = System.Drawing.Color.Red;
+
+                    AlertaID.Visible = true;
+                    AlertaIDNoExiste.Visible = false;
+
+
+                }
+
+
+            }
 
         }
 

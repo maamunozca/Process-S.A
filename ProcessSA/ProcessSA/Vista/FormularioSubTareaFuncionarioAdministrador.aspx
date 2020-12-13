@@ -7,10 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
    
-       <meta charset="utf-8">
+          <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../Css/styleDocument.css" rel="stylesheet" />
 
     </head>
 <body>
@@ -29,7 +30,7 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Administrador</asp:LinkButton>
+        <asp:LinkButton ID="BtnHome" runat="server"  class="nav-link" OnClick="BtnHome_Click">Home Funcionario</asp:LinkButton>
       </li>
 
       <li class="nav-item">
@@ -41,11 +42,6 @@
       </li>
       <li class="nav-item">
           <asp:LinkButton ID="BtnTareasFuncionario" runat="server"  class="nav-link" OnClick="BtnTareasFuncionario_Click"  >Tus Tareas Asignadas</asp:LinkButton>
-      </li>
-
-           
-        <li>
-          <asp:LinkButton ID="BtnDepartamento" class="nav-link" runat="server" OnClick="BtnDepartamento_Click">Departamentos</asp:LinkButton>
       </li>
 
         <li>
@@ -81,6 +77,7 @@
                                                                                                                      </asp:Label>
                                             <asp:Label ID="AlertaID" runat="server" Text="Debe Ingresar Un ID Valido"></asp:Label>
                                             <asp:Label ID="AlertaIDNoExiste" runat="server" Text="El ID Ingresado No Existe, Intentelo Nuevamente"></asp:Label>
+                                            
                                             <br />
                                         <asp:Button ID="BtnBuscar" CssClass="btn btn-info btn-lg" runat="server" Text="Buscar SubTarea" OnClick="BtnBuscar_Click" />&nbsp &nbsp
                                              </div>
@@ -93,7 +90,7 @@
                                                         <br />
                                                         <br />
                                                         <div class="table-responsive">                                        
-                                                            <asp:GridView ID="GridSubtarea" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                                                            <asp:GridView ID="GridSubtarea" CssClass="table table-bordered table-hover table-responsive" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" AllowSorting="True" HorizontalAlign="Center">
                                                                 <FooterStyle BackColor="White" ForeColor="#000066" />
                                                                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                                                                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -120,14 +117,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                       
-                                        <div >
-                                            <br />  
-                                            <asp:Button ID="BtnComenzar" Class="btn btn-info btn-lg" runat="server" Text="Comenzar SubTarea" OnClick="BtnComenzar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnTerminar" Class="btn btn-success  btn-lg" runat="server"  Text="Terminar SubTarea" OnClick="BtnTerminar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnRechazar" Class="btn btn-danger btn-lg" runat="server" Text="Rechazar SubTarea" OnClick="BtnRechazar_Click" />
-                                            
-                                            </div>
                                         <br />
                                         <br />
                                         <div>

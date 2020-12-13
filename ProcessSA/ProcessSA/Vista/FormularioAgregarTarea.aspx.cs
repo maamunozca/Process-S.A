@@ -745,7 +745,7 @@ namespace ProcessSA.Vista
 
             if (TXTBuscar.Text.Trim() == string.Empty)
             {
-                TXTBuscar.BackColor = System.Drawing.Color.Red;
+                TXTBuscar.BorderColor = System.Drawing.Color.Red;
                 Alerta2.Visible = true;
                 AlertaEstado.Visible = false;
                 ListarTarea();

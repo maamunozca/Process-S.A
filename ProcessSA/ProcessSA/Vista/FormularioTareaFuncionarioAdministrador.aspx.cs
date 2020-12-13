@@ -40,113 +40,11 @@ namespace ProcessSA.Vista
             Controlador.ControladorTareas AuxControladorTarea = new Controlador.ControladorTareas();
 
             DataTable dt = new DataTable();
-            dt = AuxControladorTarea.ListarTareaFuncionario(EmailTransferido.Text);
+            dt = AuxControladorTarea.ListarTareaAdministrador();
 
             GridTarea.DataSource = dt;
             GridTarea.DataBind();
 
-        }
-
-        protected void BtnComenzar_Click(object sender, EventArgs e)
-        {
-            Controlador.ControladorTareas AuxControladorTarea = new Controlador.ControladorTareas();
-            if (TXTBuscar.Text.Trim() == string.Empty)
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                AlertaID.Visible = true;
-
-            }
-            else
-            {
-                if (AuxControladorTarea.verificarTarea(Convert.ToInt32(TXTBuscar.Text)))
-                {
-                    AlertaIDNoExiste.Visible = false; ;
-                    TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                    AlertaID.Visible = false;
-
-
-                    int idrecibido = Convert.ToInt32(TXTBuscar.Text);
-
-                    AuxControladorTarea.ComenzarTarea(idrecibido);
-                    ListarTarea();
-                }
-                else
-                {
-                    TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                    AlertaIDNoExiste.Visible = true;
-                    ListarTarea();
-                }
-
-
-            }
-        }
-
-        protected void BtnTerminar_Click(object sender, EventArgs e)
-        {
-            Controlador.ControladorTareas AuxControladorTarea = new Controlador.ControladorTareas();
-
-
-            if (TXTBuscar.Text.Trim() == string.Empty)
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                AlertaID.Visible = true;
-
-            }
-            else
-            {
-                if (AuxControladorTarea.verificarTarea(Convert.ToInt32(TXTBuscar.Text)))
-                {
-                    AlertaIDNoExiste.Visible = false;
-                    TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                    AlertaID.Visible = false;
-                    int idrecibido = Convert.ToInt32(TXTBuscar.Text);
-
-                    AuxControladorTarea.TerminarTarea(idrecibido);
-                    ListarTarea();
-                }
-                else
-                {
-                    TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                    AlertaIDNoExiste.Visible = true;
-                    ListarTarea();
-                }
-
-
-            }
-
-        }
-
-        protected void BtnRechazar_Click(object sender, EventArgs e)
-        {
-            Controlador.ControladorTareas AuxControladorTarea = new Controlador.ControladorTareas();
-
-            if (TXTBuscar.Text.Trim() == string.Empty)
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                AlertaID.Visible = true;
-
-            }
-            else
-            {
-                if (AuxControladorTarea.verificarTarea(Convert.ToInt32(TXTBuscar.Text)))
-                {
-                    TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                    AlertaID.Visible = false;
-                    int idrecibido = Convert.ToInt32(TXTBuscar.Text);
-
-                    AuxControladorTarea.RechazarTarea(idrecibido);
-                    ListarTarea();
-
-                    Response.Redirect("FormularioRechazoTareaAdministrador.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
-
-                }
-                else
-                {
-                    TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                    AlertaIDNoExiste.Visible = true;
-                    ListarTarea();
-                }
-            }
         }
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
@@ -218,88 +116,13 @@ namespace ProcessSA.Vista
             Response.Redirect("Login.aspx");
         }
 
-        protected void BtnReportarProblema_Click(object sender, EventArgs e)
-        {
-            Controlador.ControladorTareas auxControladorTarea = new Controlador.ControladorTareas();
-            if (TXTBuscar.Text.Trim() == string.Empty)
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                AlertaID.Visible = true;
-                ListarTarea();
-            }
-            else
-            {
-                if (auxControladorTarea.verificarTarea(Convert.ToInt32(TXTBuscar.Text)))
-                {
-                    TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                    AlertaIDNoExiste.Visible = false;
-                    AlertaID.Visible = false;
-                    Response.Redirect("FormularioReportarProblemaAdministrador.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
 
-                }
-                else
-                {
-                    TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                    AlertaIDNoExiste.Visible = true;
-                }
-            }
-        }
 
         protected void BtnSubTarea_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioSubTareasFuncionario.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
+            Response.Redirect("FormularioSubTareaFuncionarioAdministrador.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
         }
 
-        protected void BtnAtrasada_Click(object sender, EventArgs e)
-        {
-            Controlador.ControladorTareas AuxControladorTarea = new Controlador.ControladorTareas();
-
-
-            if (TXTBuscar.Text.Trim() == string.Empty)
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                AlertaID.Visible = true;
-
-            }
-            else
-            {
-
-                if (AuxControladorTarea.verificarTarea(Convert.ToInt32(TXTBuscar.Text)))
-                {
-                    AlertaIDNoExiste.Visible = false;
-
-                    Modelo.Tarea AuxTarea = new Modelo.Tarea();
-
-                    int idtarea = Convert.ToInt32(TXTBuscar.Text);
-
-                    AuxTarea = AuxControladorTarea.ObtenerSemaforo(idtarea);
-
-                    if (AuxTarea.ID_Estado1 == 3)
-                    {
-                        TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                        AlertaID.Visible = false;
-                        AlertaSemaforo.Visible = false;
-
-                        AuxControladorTarea.AtrasoTarea(idtarea);
-                        ListarTarea();
-
-                        Response.Redirect("FormularioAtrasoTareaAdministrador.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
-                    }
-                    else
-                    {
-                        TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                        AlertaSemaforo.Visible = true;
-                    }
-                }
-                else
-                {
-                    TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                    AlertaIDNoExiste.Visible = true;
-                }
-
-
-            }
-
-        }
+        
     }
 }

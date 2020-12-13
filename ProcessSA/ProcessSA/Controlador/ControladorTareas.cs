@@ -747,6 +747,29 @@ namespace ProcessSA.Controlador
 
         }
 
+
+        public DataTable ListarTareaAdministrador()
+        {
+            Conexion conexion = new Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+            OracleCommand comando = new OracleCommand("ListarTareasAdministrador", conn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("ListarTarea", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+
+            DataTable i = new DataTable();
+
+            adaptador.Fill(i);
+            conn.Close();
+
+            return i;
+
+        }
+
         public DataTable BuscarTareaIDEmail(string Email, int idtarea)
         {
             Conexion conexion = new Conexion();

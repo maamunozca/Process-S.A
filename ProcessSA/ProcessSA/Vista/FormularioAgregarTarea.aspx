@@ -326,13 +326,15 @@
                 </div>
                                             
             <br />
+            <div class="col-xs-12 col-md-6">   
+                                
                 <!--Alerta En Caso de que los campos No Esten Llenos-->      
                                        
                 <asp:Label ID="Alerta" runat="server" Text="Debe Llenar Los Campos Faltantes "></asp:Label>                
                 <!--Alerta En Caso De Que los Campos Si Esten Llenados-->   
                 <asp:Label ID="AlertaExito" runat="server" Text="Tarea Agregada Exitosamente"></asp:Label>  
             <br />
-            <br />
+            </div>
         </div>
      </div>
 

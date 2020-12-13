@@ -121,16 +121,7 @@
                                             </div>
                                         </div>
                                        
-                                        <div >
-                                            <br />  
-                                            <asp:Button ID="BtnComenzar" Class="btn btn-info btn-lg" style="margin: 10px" runat="server" Text="Comenzar Tarea" OnClick="BtnComenzar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnTerminar" Class="btn btn-success  btn-lg" style="margin: 10px" runat="server"  Text="Terminar Tarea" OnClick="BtnTerminar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnRechazar" Class="btn btn-danger btn-lg" style="margin: 10px" runat="server" Text="Rechazar Tarea" OnClick="BtnRechazar_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnAtrasada" Class="btn btn-danger btn-lg" style="margin: 10px" runat="server" Text="Tarea Atrasada" OnClick="BtnAtrasada_Click" />&nbsp &nbsp
-                                            <asp:Button ID="BtnReportarProblema" Class="btn btn-danger btn-lg" style="margin: 10px" runat="server" Text="Reportar Problemas" OnClick="BtnReportarProblema_Click" />
-                                        </div>
-                                        <br />
-                                        <br />
+                                        <br />  
                                         <div>
                                             <asp:Button ID="BtnVolver" runat="server" CssClass="btn btn-info btn-lg" Text="Volver" OnClick="BtnVolver_Click" />
                                         </div>

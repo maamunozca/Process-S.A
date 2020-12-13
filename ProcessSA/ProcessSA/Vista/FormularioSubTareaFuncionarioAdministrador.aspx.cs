@@ -46,85 +46,73 @@ namespace ProcessSA.Vista
 
         }
 
+        public void FiltrarSubtarea()
+        {
+            int idRecibido = Convert.ToInt32(IDTRANSFERIDO.Text);
+            Controlador.ControladorSubTarea auxControladorSubTarea = new Controlador.ControladorSubTarea();
+
+            DataTable dt = new DataTable();
+            dt = auxControladorSubTarea.FiltrarSubtareaAdministrador(idRecibido, Convert.ToInt32(TXTBuscar.Text));
+            GridSubtarea.DataSource = dt;
+            GridSubtarea.DataBind();
+
+        }
+
         private void ListarSubTarea()
         {
             int idRecibido = Convert.ToInt32(IDTRANSFERIDO.Text);
             Controlador.ControladorSubTarea auxControladorSubTarea = new Controlador.ControladorSubTarea();
 
             DataTable dt = new DataTable();
-            dt = auxControladorSubTarea.ListarSubTareaFuncionario(idRecibido, EmailTransferido.Text);
+            dt = auxControladorSubTarea.ListarSubTareaAdministrador(idRecibido);
             GridSubtarea.DataSource = dt;
             GridSubtarea.DataBind();
         }
 
-        protected void BtnComenzar_Click(object sender, EventArgs e)
-        {
-            if (TXTBuscar.Text.Trim() == string.Empty)
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                AlertaID.Visible = true;
-
-            }
-            else
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                AlertaID.Visible = false;
-
-                Controlador.ControladorSubTarea auxControladorSubTarea = new Controlador.ControladorSubTarea();
-
-                auxControladorSubTarea.ComenzarSubTarea(Convert.ToInt32(TXTBuscar.Text));
-                ListarSubTarea();
-                ActualizarPorcentajeTarea();
-            }
-        }
-
-        protected void BtnTerminar_Click(object sender, EventArgs e)
-        {
-            if (TXTBuscar.Text.Trim() == string.Empty)
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                AlertaID.Visible = true;
-
-            }
-            else
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                AlertaID.Visible = false;
-
-                Controlador.ControladorSubTarea auxControladorSubTarea = new Controlador.ControladorSubTarea();
-
-                auxControladorSubTarea.TerminarSubTarea(Convert.ToInt32(TXTBuscar.Text));
-                ListarSubTarea();
-                ActualizarPorcentajeTarea();
-            }
-        }
-
-        protected void BtnRechazar_Click(object sender, EventArgs e)
-        {
-            if (TXTBuscar.Text.Trim() == string.Empty)
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                AlertaID.Visible = true;
-
-            }
-            else
-            {
-                TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                AlertaID.Visible = false;
-
-                Controlador.ControladorSubTarea auxControladorSubTarea = new Controlador.ControladorSubTarea();
-
-                auxControladorSubTarea.RechazarSubTarea(Convert.ToInt32(TXTBuscar.Text));
-                ListarSubTarea();
-                ActualizarPorcentajeTarea();
-
-                Response.Redirect("FormularioRechazoSubTareaAdministrador.aspx?parametro=" + IDTRANSFERIDO.Text + "&parametro2=" + EmailTransferido.Text + "&parametro3=" + TXTBuscar.Text);
-            }
-        }
-
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
+            Controlador.ControladorSubTarea AuxControladorSubTarea = new Controlador.ControladorSubTarea();
 
+            if (TXTBuscar.Text.Trim() == string.Empty)
+            {
+                TXTBuscar.BorderColor = System.Drawing.Color.Red;
+                AlertaID.Visible = true;
+                AlertaIDNoExiste.Visible = false;
+                ListarSubTarea();
+
+            }
+            else
+            {
+
+                try
+                {
+                    if (AuxControladorSubTarea.VerificarSubTareaAdministrador(Convert.ToInt32(TXTBuscar.Text), Convert.ToInt32(IDTRANSFERIDO.Text)))
+                    {
+                        TXTBuscar.BorderColor = System.Drawing.Color.Green;
+                        AlertaID.Visible = false;
+                        AlertaIDNoExiste.Visible = false;
+                        FiltrarSubtarea();
+                    }
+                    else
+                    {
+                        TXTBuscar.BorderColor = System.Drawing.Color.Red;
+                        AlertaIDNoExiste.Visible = true;
+                        AlertaID.Visible = false;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    TXTBuscar.BorderColor = System.Drawing.Color.Red;
+
+                    AlertaID.Visible = true;
+                    AlertaIDNoExiste.Visible = false;
+
+
+                }
+
+                
+            }
         }
 
         protected void BtnHome_Click(object sender, EventArgs e)
@@ -162,6 +150,11 @@ namespace ProcessSA.Vista
             Controlador.Inseguridad.Variable = "";
 
             Response.Redirect("Login.aspx");
+        }
+
+        protected void BtnComenzar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

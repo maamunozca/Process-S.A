@@ -171,6 +171,121 @@ namespace ProcessSA.Controlador
         }
 
 
+        public DataTable FiltrarSubtareaAdministrador(int idtarea, int idsubtarea)
+        {
+            Conexion conexion = new Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+            OracleCommand comando = new OracleCommand("FiltrarSubTareaAdministrador", conn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("Listar", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
+            comando.Parameters.Add("@idtarea", OracleDbType.Int32).Value = idtarea;
+            comando.Parameters.Add("@idSubTarea", OracleDbType.Int32).Value = idsubtarea;
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+
+            DataTable i = new DataTable();
+
+            adaptador.Fill(i);
+            conn.Close();
+
+            return i;
+
+        }
+
+
+        public Boolean VerificarSubTareaAdministrador(int idsubtarea, int idtarea)
+        {
+            Boolean existe = false;
+
+            Conexion conexion = new Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+
+            OracleCommand comando = new OracleCommand("FiltrarSubTareaAdministrador", conn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("Listar", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
+            comando.Parameters.Add("@idtarea", OracleDbType.Int32).Value = idtarea;
+            comando.Parameters.Add("@idSubTarea", OracleDbType.Int32).Value = idsubtarea;
+
+            //OracleCommand comando = new OracleCommand("SELECT * FROM SUBTAREA WHERE ID_SUBTAREA = :idsubtarea", conn);
+
+           // comando.Parameters.Add(":idsubtarea", idsubtarea);
+
+            OracleDataReader lector = comando.ExecuteReader();
+
+            if (lector.Read())
+            {
+                existe = true;
+            }
+
+            conn.Close();
+            return existe;
+
+        }
+
+        public Boolean VerificarSubTareaFuncionario(int idsubtarea, int idtarea)
+        {
+            Boolean existe = false;
+
+            Conexion conexion = new Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+
+            OracleCommand comando = new OracleCommand("FiltrarSubTareaAdministrador", conn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("Listar", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
+            comando.Parameters.Add("@idtarea", OracleDbType.Int32).Value = idtarea;
+            comando.Parameters.Add("@idSubTarea", OracleDbType.Int32).Value = idsubtarea;
+
+            //OracleCommand comando = new OracleCommand("SELECT * FROM SUBTAREA WHERE ID_SUBTAREA = :idsubtarea", conn);
+
+            // comando.Parameters.Add(":idsubtarea", idsubtarea);
+
+            OracleDataReader lector = comando.ExecuteReader();
+
+            if (lector.Read())
+            {
+                existe = true;
+            }
+
+            conn.Close();
+            return existe;
+
+        }
+
+        public Boolean VerificarSubTareaFuncionario(int idsubtarea)
+        {
+            Boolean existe = false;
+
+            Conexion conexion = new Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+            OracleCommand comando = new OracleCommand("SELECT * FROM SUBTAREA WHERE ID_SUBTAREA = :idsubtarea", conn);
+
+            comando.Parameters.Add(":idsubtarea", idsubtarea);
+
+            OracleDataReader lector = comando.ExecuteReader();
+
+            if (lector.Read())
+            {
+                existe = true;
+            }
+
+            conn.Close();
+            return existe;
+
+        }
+
+
         public DataTable ListarSubTareaFuncionario(int IDTAREA, string email)
         {
             Conexion conexion = new Conexion();
@@ -183,6 +298,29 @@ namespace ProcessSA.Controlador
             comando.Parameters.Add("Listar", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
             comando.Parameters.Add("@idtarea", OracleDbType.Int32).Value = IDTAREA;
             comando.Parameters.Add("@email", OracleDbType.Varchar2).Value = email;
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            adaptador.SelectCommand = comando;
+
+            DataTable i = new DataTable();
+
+            adaptador.Fill(i);
+            conn.Close();
+
+            return i;
+
+        }
+
+        public DataTable ListarSubTareaAdministrador(int IDTAREA)
+        {
+            Conexion conexion = new Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+            OracleCommand comando = new OracleCommand("ListarSubTareaAdministrador", conn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("Listar", OracleDbType.RefCursor).Direction = System.Data.ParameterDirection.Output;
+            comando.Parameters.Add("@idtarea", OracleDbType.Int32).Value = IDTAREA;
             OracleDataAdapter adaptador = new OracleDataAdapter();
             adaptador.SelectCommand = comando;
 

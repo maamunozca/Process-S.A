@@ -60,15 +60,6 @@ namespace ProcessSA.Vista
         protected global::System.Web.UI.WebControls.LinkButton BtnTareasFuncionario;
 
         /// <summary>
-        /// Control BtnDepartamento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnDepartamento;
-
-        /// <summary>
         /// Control BtnCerrarSesion.
         /// </summary>
         /// <remarks>
@@ -148,33 +139,6 @@ namespace ProcessSA.Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridSubtarea;
-
-        /// <summary>
-        /// Control BtnComenzar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnComenzar;
-
-        /// <summary>
-        /// Control BtnTerminar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnTerminar;
-
-        /// <summary>
-        /// Control BtnRechazar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRechazar;
 
         /// <summary>
         /// Control BtnVolver.
