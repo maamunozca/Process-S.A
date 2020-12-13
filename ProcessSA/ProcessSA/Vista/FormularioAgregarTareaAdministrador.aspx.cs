@@ -32,7 +32,7 @@ namespace ProcessSA.Vista
                     IDTransferido.Text = Request.Params["parametro"];
                     IDTransferido.Visible = false;
 
-                    if (Request.Params["parametro2"] != null)
+                    if (Request.Params["parametro2"] != null && Controlador.Inseguridad.Variable.Length > 0)
                     {
                         EmailTransferido.Text = Request.Params["parametro2"];
                         EmailTransferido.Visible = false;
@@ -42,7 +42,7 @@ namespace ProcessSA.Vista
                 {
                     Response.Redirect("Login.aspx");
                 }
-                
+
 
 
                 ListarTarea();
@@ -55,6 +55,8 @@ namespace ProcessSA.Vista
                 AlertaActualizacion.Visible = false;
                 AlertaEstado.Visible = false;
                 FechaActuaizada.Visible = false;
+
+                EliminarAlerta.Visible = false;
                 ActualizarPorcentajeFlujo();
 
 
@@ -371,7 +373,7 @@ namespace ProcessSA.Vista
 
         protected void TextBox6_TextChanged(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioSubTareaAdministrador.aspx");
+            Response.Redirect("FormularioSubTarea.aspx");
         }
 
         protected void BtnAgregarSubTarea_Click(object sender, EventArgs e)
@@ -394,7 +396,7 @@ namespace ProcessSA.Vista
                     AlertaIDNOExistente.Visible = false;
                     Alerta2.Visible = false;
                     FechaActuaizada.Visible = false;
-                    Response.Redirect("FormularioSubTareaAdministrador.aspx?parametro=" + IDTransferido.Text + "&parametro2=" + EmailTransferido.Text + "&parametro3=" + TXTBuscar.Text);
+                    Response.Redirect("FormularioSubTarea.aspx?parametro=" + IDTransferido.Text + "&parametro2=" + EmailTransferido.Text + "&parametro3=" + TXTBuscar.Text);
                 }
                 else
                 {
@@ -414,15 +416,35 @@ namespace ProcessSA.Vista
             {
 
                 TXTBuscar.BorderColor = System.Drawing.Color.Red;
+
                 ListarTarea();
+
+                Alerta.Visible = false;
+                AlertaExito.Visible = false;
+                Alerta2.Visible = false;
+                AlertaSemaforo.Visible = false;
+                AlertaIDNOExistente.Visible = false;
+                aLERTANombreNoExistente.Visible = false;
+                AlertaActualizacion.Visible = false;
+                AlertaEstado.Visible = false;
+                FechaActuaizada.Visible = false;
+                EliminarAlerta.Visible = false;
             }
             else
             {
                 if (auxControladorTarea.verificarTareaNombre(TXTBuscar.Text))
                 {
-                    aLERTANombreNoExistente.Visible = false;
+                    Alerta.Visible = false;
+                    AlertaExito.Visible = false;
                     Alerta2.Visible = false;
+                    AlertaSemaforo.Visible = false;
+                    AlertaIDNOExistente.Visible = false;
+                    aLERTANombreNoExistente.Visible = false;
+                    AlertaActualizacion.Visible = false;
+                    AlertaEstado.Visible = false;
+                    EliminarAlerta.Visible = false;
                     FechaActuaizada.Visible = false;
+
                     TXTBuscar.BorderColor = System.Drawing.Color.Green;
                     DataTable dt = new DataTable();
                     dt = auxControladorTarea.BuscarTarea(Convert.ToInt32(IDTransferido.Text), TXTBuscar.Text);
@@ -431,8 +453,18 @@ namespace ProcessSA.Vista
                 }
                 else
                 {
+
+                    Alerta.Visible = false;
+                    AlertaExito.Visible = false;
+                    Alerta2.Visible = false;
+                    AlertaSemaforo.Visible = false;
+                    AlertaIDNOExistente.Visible = false;
                     aLERTANombreNoExistente.Visible = true;
+                    AlertaActualizacion.Visible = false;
+                    AlertaEstado.Visible = false;
                     FechaActuaizada.Visible = false;
+                    EliminarAlerta.Visible = false;
+
                     TXTBuscar.BorderColor = System.Drawing.Color.Red;
                 }
             }
@@ -447,33 +479,60 @@ namespace ProcessSA.Vista
                 Alerta2.Visible = true;
                 FechaActuaizada.Visible = false;
                 AlertaEstado.Visible = false;
+                EliminarAlerta.Visible = false;
                 ListarTarea();
             }
             else
             {
-
-                if (auxControladorTarea.verificarTarea(Convert.ToInt32(TXTBuscar.Text)))
+                try
                 {
+                    if (auxControladorTarea.verificarTarea(Convert.ToInt32(TXTBuscar.Text)))
+                    {
 
-                    TXTBuscar.BorderColor = System.Drawing.Color.Green;
+                        TXTBuscar.BorderColor = System.Drawing.Color.Green;
+                        AlertaIDNOExistente.Visible = false;
+                        DataTable dt = new DataTable();
+                        dt = auxControladorTarea.BuscarTareaID(Convert.ToInt32(IDTransferido.Text), Convert.ToInt32(TXTBuscar.Text));
+                        GridTarea.DataSource = dt;
+                        GridTarea.DataBind();
+                        Alerta2.Visible = false;
+                        AlertaEstado.Visible = false;
+                        AlertaActualizacion.Visible = false;
+                        aLERTANombreNoExistente.Visible = false;
+                        AlertaExito.Visible = false;
+                        FechaActuaizada.Visible = false;
+                        EliminarAlerta.Visible = false;
+
+                    }
+                    else
+                    {
+                        TXTBuscar.BorderColor = System.Drawing.Color.Red;
+                        AlertaIDNOExistente.Visible = true;
+                        AlertaEstado.Visible = false;
+                        FechaActuaizada.Visible = false;
+                        AlertaActualizacion.Visible = false;
+                        aLERTANombreNoExistente.Visible = false;
+                        AlertaExito.Visible = false;
+                        EliminarAlerta.Visible = false;
+                    }
+
+                }
+                catch (Exception)
+                {
+                    Alerta.Visible = false;
+                    AlertaExito.Visible = false;
+                    Alerta2.Visible = true;
+                    AlertaSemaforo.Visible = false;
                     AlertaIDNOExistente.Visible = false;
-                    DataTable dt = new DataTable();
-                    dt = auxControladorTarea.BuscarTareaID(Convert.ToInt32(IDTransferido.Text), Convert.ToInt32(TXTBuscar.Text));
-                    GridTarea.DataSource = dt;
-                    GridTarea.DataBind();
-                    Alerta2.Visible = false;
+                    aLERTANombreNoExistente.Visible = false;
+                    AlertaActualizacion.Visible = false;
                     AlertaEstado.Visible = false;
-
                     FechaActuaizada.Visible = false;
-
-                }
-                else
-                {
+                    EliminarAlerta.Visible = false;
                     TXTBuscar.BorderColor = System.Drawing.Color.Red;
-                    AlertaIDNOExistente.Visible = true;
-                    AlertaEstado.Visible = false;
-                    FechaActuaizada.Visible = false;
+
                 }
+
             }
         }
 
@@ -503,6 +562,9 @@ namespace ProcessSA.Vista
                 Alerta.Visible = false;
                 AlertaEstado.Visible = false;
                 FechaActuaizada.Visible = false;
+                aLERTANombreNoExistente.Visible = false;
+                AlertaExito.Visible = false;
+                EliminarAlerta.Visible = false;
                 GenerarID();
                 limpiar();
                 ListarTarea();
@@ -514,6 +576,9 @@ namespace ProcessSA.Vista
                 Alerta.Visible = true;
                 AlertaEstado.Visible = false;
                 FechaActuaizada.Visible = false;
+                aLERTANombreNoExistente.Visible = false;
+                AlertaExito.Visible = false;
+                EliminarAlerta.Visible = false;
 
             }
 
@@ -530,6 +595,10 @@ namespace ProcessSA.Vista
                 Alerta2.Visible = true;
                 AlertaEstado.Visible = false;
                 FechaActuaizada.Visible = false;
+                AlertaActualizacion.Visible = false;
+                aLERTANombreNoExistente.Visible = false;
+                AlertaExito.Visible = false;
+                EliminarAlerta.Visible = false;
                 ListarTarea();
             }
             else
@@ -543,10 +612,16 @@ namespace ProcessSA.Vista
                     Alerta2.Visible = false;
                     AlertaEstado.Visible = false;
                     FechaActuaizada.Visible = false;
+                    AlertaActualizacion.Visible = false;
+                    aLERTANombreNoExistente.Visible = false;
+                    AlertaExito.Visible = false;
+
+                    EliminarAlerta.Visible = true;
 
                     auxControladorTarea.EliminarTarea(Convert.ToInt32(TXTBuscar.Text));
 
                     ListarTarea();
+                    limpiar();
                     ActualizarPorcentajeFlujo();
                 }
                 else
@@ -555,9 +630,16 @@ namespace ProcessSA.Vista
                     AlertaIDNOExistente.Visible = true;
                     AlertaEstado.Visible = false;
                     FechaActuaizada.Visible = false;
+
+                    AlertaActualizacion.Visible = false;
+                    aLERTANombreNoExistente.Visible = false;
+                    AlertaExito.Visible = false;
+
+                    EliminarAlerta.Visible = false;
                 }
             }
         }
+
 
 
         protected void BtnHome_Click(object sender, EventArgs e)
@@ -579,9 +661,9 @@ namespace ProcessSA.Vista
             Response.Redirect("FormularioTareaFuncionarioAdministrador.aspx?parametro=" + EmailTransferido.Text);
         }
 
-        protected void BtnDepartamento_Click(object sender, EventArgs e)
+        protected void BtnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioDepartamento.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("VistaGestionTareasAdministrador.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnCerrarSesion_Click(object sender, EventArgs e)
@@ -590,7 +672,6 @@ namespace ProcessSA.Vista
 
             Response.Redirect("Login.aspx");
         }
-
 
         protected void BtnActualizarFechas_Click(object sender, EventArgs e)
         {
@@ -604,6 +685,10 @@ namespace ProcessSA.Vista
                 Alerta2.Visible = true;
                 AlertaEstado.Visible = false;
                 FechaActuaizada.Visible = false;
+                AlertaActualizacion.Visible = false;
+                aLERTANombreNoExistente.Visible = false;
+                AlertaExito.Visible = false;
+                EliminarAlerta.Visible = false;
                 ListarTarea();
             }
             else
@@ -617,6 +702,10 @@ namespace ProcessSA.Vista
                         AlertaIDNOExistente.Visible = false;
                         Alerta2.Visible = false;
                         FechaActuaizada.Visible = false;
+                        AlertaActualizacion.Visible = false;
+                        aLERTANombreNoExistente.Visible = false;
+                        AlertaExito.Visible = false;
+                        EliminarAlerta.Visible = false;
 
                         DateTime fechat = Convert.ToDateTime(TXTFechaTermino.Text);
                         DateTime fechahoy = DateTime.Today;
@@ -710,6 +799,12 @@ namespace ProcessSA.Vista
                     Alerta.Visible = true;
                     AlertaEstado.Visible = false;
                     FechaActuaizada.Visible = false;
+
+                    AlertaActualizacion.Visible = false;
+                    aLERTANombreNoExistente.Visible = false;
+                    AlertaExito.Visible = false;
+
+                    EliminarAlerta.Visible = false;
                 }
 
             }
@@ -748,6 +843,12 @@ namespace ProcessSA.Vista
                 TXTBuscar.BorderColor = System.Drawing.Color.Red;
                 Alerta2.Visible = true;
                 AlertaEstado.Visible = false;
+                FechaActuaizada.Visible = false;
+                AlertaActualizacion.Visible = false;
+                aLERTANombreNoExistente.Visible = false;
+                AlertaExito.Visible = false;
+
+                EliminarAlerta.Visible = false;
                 ListarTarea();
             }
             else
@@ -765,6 +866,11 @@ namespace ProcessSA.Vista
                     AlertaIDNOExistente.Visible = false;
                     Alerta2.Visible = false;
                     AlertaEstado.Visible = false;
+                    FechaActuaizada.Visible = false;
+                    AlertaActualizacion.Visible = false;
+                    aLERTANombreNoExistente.Visible = false;
+                    AlertaExito.Visible = false;
+                    EliminarAlerta.Visible = false;
 
                     int idrecibida = Convert.ToInt32(IDTransferido.Text);
                     int idbuscado = Convert.ToInt32(TXTBuscar.Text);
@@ -787,11 +893,6 @@ namespace ProcessSA.Vista
 
                 }
             }
-        }
-
-        protected void BtnVolver_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VistaGestionTareasAdministrador.aspx?parametro=" + EmailTransferido.Text);
         }
     }
 }

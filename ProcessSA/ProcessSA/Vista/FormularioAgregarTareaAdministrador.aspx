@@ -111,16 +111,21 @@
          </div>
      </div>
 
-     <!--MENSAJES DE ALERTA-->
-    <asp:Label ID="Alerta2" runat="server" Text="Debe Ingresar un ID Valido"></asp:Label>
-    <asp:Label ID="AlertaSemaforo" runat="server" Text="Aun Tiene Un Plazo Vigente"></asp:Label>
-    <asp:Label ID="AlertaIDNOExistente" runat="server" Text="El ID Ingresado No Existe"></asp:Label>
-    <asp:Label ID="aLERTANombreNoExistente" runat="server" Text="El Nombre De La Tarea Ingresada No Existe"></asp:Label>
-    <asp:Label ID="AlertaActualizacion" runat="server" Text="Tarea Actualizada Exitosamente "></asp:Label>
-    <asp:Label ID="AlertaEstado" runat="server" Text="Fechas Actualizadas , Se a enviado un correo al responsable por tarea Atrasada"></asp:Label>
-    <asp:Label ID="FechaActuaizada" runat="server" Text="Fechas Actualizadas Exitosamente"></asp:Label>
+     <div class="container">  
+         <div class="row">  
+                        <!--MENSAJES DE ALERTA-->
+                <asp:Label ID="Alerta2" runat="server" Text="Debe Ingresar un ID Valido"></asp:Label>
+                <asp:Label ID="AlertaSemaforo" runat="server" Text="Aun Tiene Un Plazo Vigente"></asp:Label>
+                <asp:Label ID="AlertaIDNOExistente" runat="server" Text="El ID Ingresado No Existe"></asp:Label>
+                <asp:Label ID="aLERTANombreNoExistente" runat="server" Text="El Nombre De La Tarea Ingresada No Existe"></asp:Label>
+                <asp:Label ID="AlertaActualizacion" runat="server" Text="Tarea Actualizada Exitosamente "></asp:Label>
+                <asp:Label ID="AlertaEstado" runat="server" Text="Fechas Actualizadas , Se a enviado un correo al responsable por tarea Atrasada"></asp:Label>
+                <asp:Label ID="FechaActuaizada" runat="server" Text="Fechas Actualizadas Exitosamente"></asp:Label>
+                <asp:Label ID="EliminarAlerta" runat="server" Text="Tarea Eliminada Exitosamente"></asp:Label>
                                         
-     <br />
+                <br />
+         </div>
+     </div>
 
      <!--BOTONES-->
     <div class="container">
