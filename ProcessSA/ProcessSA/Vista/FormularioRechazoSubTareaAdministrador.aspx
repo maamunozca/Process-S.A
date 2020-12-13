@@ -49,8 +49,9 @@
       </li>
 
         <li>
-            <a href="Home.aspx"  class="nav-link" >Cerrar Sesion</a>
+            <asp:LinkButton ID="BtnCerrarSesion" class="nav-link" runat="server" OnClick="BtnCerrarSesion_Click">Cerrar Sesion</asp:LinkButton>
         </li>
+
 
     </ul>
 

@@ -16,16 +16,20 @@ namespace ProcessSA.Vista
 
             if (!IsPostBack)
             {
-                if (Request.Params["parametro"] != null)
+                if (Request.Params["parametro"] != null && Controlador.Inseguridad.Variable.Length > 0)
                 {
                     IDTRANSFERIDO.Text = Request.Params["parametro"];
                     IDTRANSFERIDO.Visible = false;
+                    
+                    if (Request.Params["parametro2"] != null)
+                    {
+                        EmailTransferido.Text = Request.Params["parametro2"];
+                        EmailTransferido.Visible = false;
+                    }
                 }
-
-                if (Request.Params["parametro2"] != null)
+                else
                 {
-                    EmailTransferido.Text = Request.Params["parametro2"];
-                    EmailTransferido.Visible = false;
+                    Response.Redirect("Login.aspx");
                 }
 
                 Alerta.Visible = false;
@@ -157,5 +161,13 @@ namespace ProcessSA.Vista
             Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
 
         }
+
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Controlador.Inseguridad.Variable = "";
+
+            Response.Redirect("Login.aspx");
+        }
+
     }
 }

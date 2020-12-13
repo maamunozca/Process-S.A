@@ -44,8 +44,8 @@
           <asp:LinkButton ID="BtnTareasFuncionario" runat="server"  class="nav-link" OnClick="BtnTareasFuncionario_Click"  >Tus Tareas Asignadas</asp:LinkButton>
       </li>
 
-        <li>
-            <a href="Home.aspx"  class="nav-link" >Cerrar Sesion</a>
+     <li>
+            <asp:LinkButton ID="BtnCerrarSesion" class="nav-link" runat="server" OnClick="BtnCerrarSesion_Click">Cerrar Sesion</asp:LinkButton>
         </li>
 
     </ul>

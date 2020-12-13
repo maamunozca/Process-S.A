@@ -12,25 +12,27 @@ namespace ProcessSA.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Params["parametro"] != null)
+            if (Request.Params["parametro"] != null && Controlador.Inseguridad.Variable.Length > 0)
             {
                 IDTRANSFERIDO.Text = Request.Params["parametro"];
                 IDTRANSFERIDO.Visible = false;
-            }
 
-            if (Request.Params["parametro2"] != null)
+                if (Request.Params["parametro2"] != null)
+                {
+                    EmailTransferido.Text = Request.Params["parametro2"];
+                    EmailTransferido.Visible = false;
+
+                    if (Request.Params["parametro3"] != null)
+                    {
+                        NuevoID.Text = Request.Params["parametro3"];
+                        NuevoID.Visible = false;
+                    }
+                }
+            }
+            else
             {
-                EmailTransferido.Text = Request.Params["parametro2"];
-                EmailTransferido.Visible = false;
+                Response.Redirect("Login.aspx");
             }
-
-            if (Request.Params["parametro3"] != null)
-            {
-                NuevoID.Text = Request.Params["parametro3"];
-                NuevoID.Visible = false;
-            }
-
-
 
             IDTRANSFERIDO.Visible = false;
             Alerta.Visible = false;
@@ -136,6 +138,13 @@ namespace ProcessSA.Vista
         protected void BtnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("FormularioAgregarTarea.aspx?parametro=" + IDTRANSFERIDO.Text + "&parametro2=" + EmailTransferido.Text + "&parametro3="+ NuevoID.Text);
+        }
+
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Controlador.Inseguridad.Variable = "";
+
+            Response.Redirect("Login.aspx");
         }
     }
 }

@@ -16,10 +16,14 @@ namespace ProcessSA.Vista
             AlertaIDNoExiste.Visible = false;
             AlertaSemaforo.Visible = false;
             
-            if (Request.Params["parametro"] != null)
+            if (Request.Params["parametro"] != null && Controlador.Inseguridad.Variable.Length > 0) 
             {
                 EmailTransferido.Text = Request.Params["parametro"];
                 EmailTransferido.Visible = false;
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
             }
 
 
@@ -199,6 +203,13 @@ namespace ProcessSA.Vista
             Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
         }
 
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Controlador.Inseguridad.Variable = "";
+
+            Response.Redirect("Login.aspx");
+        }
+
         protected void BtnReportarProblema_Click(object sender, EventArgs e)
         {
             Controlador.ControladorTareas auxControladorTarea = new Controlador.ControladorTareas();
@@ -228,7 +239,15 @@ namespace ProcessSA.Vista
 
         protected void BtnSubTarea_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioSubTareasFuncionario.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
+            if (TXTBuscar.Text.Trim() == string.Empty)
+            {
+                TXTBuscar.BorderColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                TXTBuscar.BorderColor = System.Drawing.Color.Green;
+                Response.Redirect("FormularioSubTareasFuncionario.aspx?parametro=" + TXTBuscar.Text + "&parametro2=" + EmailTransferido.Text);
+            }        
         }
 
         protected void BtnAtrasada_Click(object sender, EventArgs e)

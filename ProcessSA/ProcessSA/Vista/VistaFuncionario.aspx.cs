@@ -14,7 +14,7 @@ namespace ProcessSA.Vista
         {
             if (!IsPostBack)
             {
-                if (Request.Params["parametro"] != null)
+                if (Request.Params["parametro"] != null && Controlador.Inseguridad.Variable.Length > 0)
                 {
                     EmailTransferido.Text = Request.Params["parametro"];
                     EmailTransferido.Visible = false;
@@ -143,6 +143,13 @@ namespace ProcessSA.Vista
         protected void BtnTareasFuncionario_Click(object sender, EventArgs e)
         {
             Response.Redirect("FormularioTareasFuncionario.aspx?parametro=" + EmailTransferido.Text);
+        }
+
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Controlador.Inseguridad.Variable = "";
+
+            Response.Redirect("Login.aspx");
         }
     }
 }

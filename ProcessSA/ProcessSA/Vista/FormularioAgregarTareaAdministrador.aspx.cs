@@ -27,16 +27,22 @@ namespace ProcessSA.Vista
                 GenerarID();
                 limpiar();
 
-                if (Request.Params["parametro"] != null)
+                if (Request.Params["parametro"] != null && Controlador.Inseguridad.Variable.Length > 0)
                 {
                     IDTransferido.Text = Request.Params["parametro"];
                     IDTransferido.Visible = false;
+
+                    if (Request.Params["parametro2"] != null)
+                    {
+                        EmailTransferido.Text = Request.Params["parametro2"];
+                        EmailTransferido.Visible = false;
+                    }
                 }
-                if (Request.Params["parametro2"] != null)
+                else
                 {
-                    EmailTransferido.Text = Request.Params["parametro2"];
-                    EmailTransferido.Visible = false;
+                    Response.Redirect("Login.aspx");
                 }
+                
 
 
                 ListarTarea();
@@ -576,6 +582,13 @@ namespace ProcessSA.Vista
         protected void BtnDepartamento_Click(object sender, EventArgs e)
         {
             Response.Redirect("FormularioDepartamento.aspx?parametro=" + EmailTransferido.Text);
+        }
+
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Controlador.Inseguridad.Variable = "";
+
+            Response.Redirect("Login.aspx");
         }
 
 

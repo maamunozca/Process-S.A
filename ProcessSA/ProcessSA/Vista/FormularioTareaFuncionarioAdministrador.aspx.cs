@@ -17,10 +17,14 @@ namespace ProcessSA.Vista
             AlertaIDNoExiste.Visible = false;
             AlertaSemaforo.Visible = false;
 
-            if (Request.Params["parametro"] != null)
+            if (Request.Params["parametro"] != null && Controlador.Inseguridad.Variable.Length > 0)
             {
                 EmailTransferido.Text = Request.Params["parametro"];
                 EmailTransferido.Visible = false;
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
             }
 
 
@@ -205,6 +209,13 @@ namespace ProcessSA.Vista
         protected void BtnDepartamento_Click(object sender, EventArgs e)
         {
             Response.Redirect("FormularioDepartamento.aspx?parametro=" + EmailTransferido.Text);
+        }
+
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Controlador.Inseguridad.Variable = "";
+
+            Response.Redirect("Login.aspx");
         }
 
         protected void BtnReportarProblema_Click(object sender, EventArgs e)
