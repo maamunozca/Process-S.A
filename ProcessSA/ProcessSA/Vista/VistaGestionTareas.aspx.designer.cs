@@ -159,6 +159,15 @@ namespace ProcessSA.Vista
         protected global::System.Web.UI.WebControls.Label lblvacio;
 
         /// <summary>
+        /// Control lbID.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbID;
+
+        /// <summary>
         /// Control BtnBuscar.
         /// </summary>
         /// <remarks>

@@ -20,7 +20,9 @@ namespace ProcessSA.Vista
             lblError.Visible = false;
             lblExito.Visible = false;
             lblvacio.Visible = false;
-            
+            lbID.Visible = false;
+
+
             GenerarID();
             if (!IsPostBack)
             {
@@ -114,6 +116,7 @@ namespace ProcessSA.Vista
                 lblvacio.Visible = true;
                 lblExito.Visible = false;
                 lblError.Visible = false;
+                lbID.Visible = false;
             }
             else if (!auxControlador.validarID(Convert.ToInt32(TXTBuscar.Text)))
             {
@@ -121,15 +124,32 @@ namespace ProcessSA.Vista
                 lblError.Visible = true;
                 lblExito.Visible = false;
                 lblvacio.Visible = false;
+                lbID.Visible = false;
 
-            }else
+            }
+            else
             {
-                TXTBuscar.BorderColor = System.Drawing.Color.Green;
-                lblError.Visible = false;
-                lblvacio.Visible = false;
-                auxControlador.EliminarFlujo(Convert.ToInt32(TXTBuscar.Text));
-                lblExito.Visible = true;
-                ListarFlujo();
+                try
+                {
+
+                    TXTBuscar.BorderColor = System.Drawing.Color.Green;
+                    lblError.Visible = false;
+                    lblvacio.Visible = false;
+                    auxControlador.EliminarFlujo(Convert.ToInt32(TXTBuscar.Text));
+                    lblExito.Visible = true;
+                    lbID.Visible = false;
+                    ListarFlujo();
+
+                }
+                catch (Exception)
+                {
+
+                    lblError.Visible = false;
+                    lblvacio.Visible = false;
+                    lblExito.Visible = false;
+                    lbID.Visible = true;
+                }
+               
             }
         }
 
@@ -162,6 +182,7 @@ namespace ProcessSA.Vista
                 lblvacio.Visible = true;
                
                 lblError.Visible = false;
+                lbID.Visible = false;
 
             }
             else if (!AuxControladorFlujoTarea.validarID(Convert.ToInt32(TXTBuscar.Text)))
@@ -171,12 +192,16 @@ namespace ProcessSA.Vista
                 lblError.Visible = true;
               
                 lblvacio.Visible = false;
+
+                lbID.Visible = false;
             }
             else
             {
                 lblError.Visible = false;
                 lblvacio.Visible = false;
-              
+
+                lbID.Visible = false;
+
                 FiltrarFLujoTarea();
             }
         }
@@ -195,17 +220,20 @@ namespace ProcessSA.Vista
                 TXTBuscar.BorderColor = System.Drawing.Color.Red;
                 lblvacio.Visible = true;
                 lblError.Visible = false;
+                lbID.Visible = false;
 
             }
             else if (!AuxControladorFlujoTarea.validarID(Convert.ToInt32(TXTBuscar.Text)))
             {
                 lblvacio.Visible = false;
                 lblError.Visible = true;
+                lbID.Visible = false;
             }
             else
             {
                 lblvacio.Visible = false;
                 lblError.Visible = false;
+                lbID.Visible = false;
 
                 Response.Redirect("FormularioAgregarTarea.aspx?parametro=" + TXTBuscar.Text+ "&parametro2=" + EmailTransferido.Text);
             }

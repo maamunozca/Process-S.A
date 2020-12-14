@@ -76,12 +76,12 @@
 
                     <asp:Label ID="Label1" runat="server" Text="id departamento"></asp:Label>
                     <br />
-                    <asp:TextBox ID="TxtId" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TxtId" class="form-control" runat="server" Enabled="false"></asp:TextBox>
                     <br />
                     <br />
                     <asp:Label ID="Label2"  runat="server" Text="nombre departamento"></asp:Label>
                     <br />
-                    <asp:TextBox ID="TxtNombreDepartamento" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TxtNombreDepartamento" class="form-control col-lg-6" runat="server"></asp:TextBox>
                     <br />
                     <br />
 
@@ -107,21 +107,30 @@
 
                     <br />
                     <br />
+                    <div class="container">   
+                        <div class="row">
+                            <!--Alertas-->
+                            <asp:Label ID="lbMensajeError" runat="server"></asp:Label>
+                            <asp:Label ID="lbMensajeExito" runat="server"></asp:Label>
+                            <asp:Label ID="EmailTransferido" runat="server" Text="Label"></asp:Label>
+                        </div>
+                    </div>
 
-                    <!--BOTONES-->
-                    <asp:Button ID="btnGuardar" runat="server" class="btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click" />
+               <div class="container">
+                        <div class="row">
+                                             <!--BOTONES-->
+                            <asp:Button ID="btnGuardar" runat="server" class="btn btn-primary" Text="Guardar" OnClick="btnGuardar_Click" />&nbsp
 
 
-                    <asp:Button ID="btnEliminar" runat="server" class="btn btn-danger" Text="Eliminar" OnClick="btnEliminar_Click" />
+                            <asp:Button ID="btnEliminar" runat="server" class="btn btn-danger" Text="Eliminar" OnClick="btnEliminar_Click" />&nbsp
 
-                    <asp:Button ID="btnModificar" runat="server" class="btn btn-success" Text="Modificar" OnClick="btnModificar_Click" />
+                            <asp:Button ID="btnModificar" runat="server" class="btn btn-success" Text="Modificar" OnClick="btnModificar_Click" />
+
+                        </div>
+               </div>
 
 
-
-                    <!--Alertas-->
-                    <asp:Label ID="lbMensajeError" runat="server"></asp:Label>
-                    <asp:Label ID="lbMensajeExito" runat="server"></asp:Label>
-                    <asp:Label ID="EmailTransferido" runat="server" Text="Label"></asp:Label>
+                    
                 </div>
     </form>
 

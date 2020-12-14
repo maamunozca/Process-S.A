@@ -19,7 +19,9 @@ namespace ProcessSA.Vista
             {
                 tablaDV();
                 ListarFlujo();
-                
+                GenerarID();
+
+
             }
 
             if (Request.Params["parametro"] != null && Controlador.Inseguridad.Variable.Length > 0)
@@ -34,6 +36,26 @@ namespace ProcessSA.Vista
         }
         OracleConnection conn = new OracleConnection("DATA SOURCE = xe; PASSWORD = 123; USER ID = portafolio");
 
+
+
+        private void GenerarID()
+        {
+            Controlador.Conexion conexion = new Controlador.Conexion();
+            OracleConnection conn = new OracleConnection();
+            conn = conexion.getConn();
+
+            conn.Open();
+
+            OracleCommand comando = new OracleCommand("SELECT COUNT(ID_DEPARTAMENTO) FROM DEPARTAMENTO", conn);
+
+
+            int i = Convert.ToInt32(comando.ExecuteScalar());
+            conn.Close();
+            i++;
+
+            TxtId.Text = i.ToString();
+
+        }
         private void tablaDV()
         {
             string qr = "SELECT * FROM departamento;";
@@ -75,29 +97,39 @@ namespace ProcessSA.Vista
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (TxtId.Text == "")
+            if (TxtBuscar.Text.Trim() == string.Empty)
             {
                 lbMensajeError.Text = "Debe de llenar los campos solicitados";
                 lbMensajeError.Visible = true;
             }
             else
             {
-                conn.Open();
-                OracleCommand comando = new OracleCommand("borrar", conn);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("id_departamento", OracleDbType.Int32).Value = TxtId.Text;
-                comando.ExecuteNonQuery();
-                conn.Close();
-                tablaDV();
+                try
+                {
+                    conn.Open();
+                    OracleCommand comando = new OracleCommand("borrar", conn);
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.Parameters.Add("id_departamento", OracleDbType.Int32).Value = TxtBuscar.Text;
+                    comando.ExecuteNonQuery();
+                    conn.Close();
+                    tablaDV();
 
-                lbMensajeError.Text = "Datos eliminados";
-                lbMensajeError.Visible = true;
+                    lbMensajeError.Text = "Departamento Eliminado Exitosamente";
+                    lbMensajeError.Visible = true;
+                }
+                catch (Exception)
+                {
+
+                    lbMensajeError.Text = "No se pudo eliminar, Este Departamento tiene tareas Asignadas";
+                    lbMensajeError.Visible = true;
+                }
+                
             }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (TxtId.Text == "" || TxtNombreDepartamento.Text == "")
+            if (TxtId.Text.Trim() == string.Empty || TxtNombreDepartamento.Text.Trim() == string.Empty)
             {
                 lbMensajeError.Text = "Debe de llenar los campos solicitados";
                 lbMensajeError.Visible = true;
@@ -113,7 +145,7 @@ namespace ProcessSA.Vista
                 conn.Close();
                 tablaDV();
 
-                lbMensajeExito.Text = "Datos ingresados correctamente";
+                lbMensajeExito.Text = "Departamento Ingresados Correctamente";
                 lbMensajeExito.Visible = true;
             }
 
@@ -121,24 +153,34 @@ namespace ProcessSA.Vista
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            if (TxtId.Text == "" || TxtNombreDepartamento.Text == "")
+            if (TxtBuscar.Text.Trim() == string.Empty || TxtNombreDepartamento.Text.Trim() == string.Empty)
             {
                 lbMensajeError.Text = "Debe de llenar los campos solicitados";
                 lbMensajeError.Visible = true;
             }
             else
             {
-                conn.Open();
-                OracleCommand comando = new OracleCommand("actualizar", conn);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("id_departamento", OracleDbType.Int32).Value = TxtId.Text;
-                comando.Parameters.Add("nombreDepartamento", OracleDbType.Varchar2).Value = TxtNombreDepartamento.Text;
-                comando.ExecuteNonQuery();
-                conn.Close();
-                tablaDV();
+                try
+                {
+                    conn.Open();
+                    OracleCommand comando = new OracleCommand("actualizar", conn);
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.Parameters.Add("id_departamento", OracleDbType.Int32).Value = TxtBuscar.Text;
+                    comando.Parameters.Add("nombreDepartamento", OracleDbType.Varchar2).Value = TxtNombreDepartamento.Text;
+                    comando.ExecuteNonQuery();
+                    conn.Close();
+                    tablaDV();
 
-                lbMensajeExito.Text = "Datos modificados correctamente";
-                lbMensajeExito.Visible = true;
+                    lbMensajeExito.Text = "Departamento Modificados Correctamente";
+                    lbMensajeExito.Visible = true;
+                }
+                catch (Exception)
+                {
+
+                    lbMensajeExito.Text = "No se puede modificar este departamento, Porque tiene Tareas Asignadas";
+                    lbMensajeExito.Visible = true;
+                }
+                
             }
         }
 

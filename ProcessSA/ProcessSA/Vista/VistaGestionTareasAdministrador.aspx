@@ -105,6 +105,7 @@
                                                         <asp:Label ID="lblError" runat="server" Text="El ID Ingresado No Existe "></asp:Label>
                                                         <asp:Label ID="lblExito" runat="server" Text="El Id ingresado Fue Eliminado Exitosamente"></asp:Label>
                                                         <asp:Label ID="lblvacio" runat="server" Text="Debe Ingresar Un ID"></asp:Label>
+                                                        <asp:Label ID="lbID" runat="server" Text="No se puede eliminar este flujo, Porque tiene tareas creadas"></asp:Label>
                                                     </div>
                                                     
                                                     <div class="col">
