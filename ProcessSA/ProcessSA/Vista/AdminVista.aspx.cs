@@ -47,7 +47,19 @@ namespace ProcessSA.Vista
 
             Actualizar();
 
+            obtenerusuario();
+
         }
+
+        public void obtenerusuario()
+        {
+            Controlador.ControladorUsuario auxUsuario = new Controlador.ControladorUsuario();
+            Modelo.Usuarios usuario = new Modelo.Usuarios();
+            usuario = auxUsuario.getUsuario(EmailTransferido.Text);
+
+            UsuarioEncontrado.Text = usuario.Nombre_Usuario1;
+        }
+
 
         public void Actualizar()
         {

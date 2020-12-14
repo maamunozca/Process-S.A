@@ -21,6 +21,8 @@ namespace ProcessSA.Vista
             lblExito.Visible = false;
             lblvacio.Visible = false;
 
+            lbID.Visible = false;
+
             GenerarID();
             if (!IsPostBack)
             {

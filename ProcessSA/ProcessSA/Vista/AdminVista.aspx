@@ -72,6 +72,8 @@
                     <div class="ContenidoVistaAdmnin">
                          <div class="col-xs-12">
                              <br />
+                             <h1>Bienvenido Administrador: <asp:Label ID="UsuarioEncontrado" runat="server" Text="Label"></asp:Label></h1>
+                             <br />
                                 <h1>Usuarios Registrados</h1>
                              <br />
                             </div>

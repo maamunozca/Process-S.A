@@ -644,7 +644,7 @@ namespace ProcessSA.Vista
 
         protected void BtnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminVista.aspx?parametro=" + EmailTransferido.Text);
+            Response.Redirect("VistaFuncionario.aspx?parametro=" + EmailTransferido.Text);
         }
 
         protected void BtnFlujo_Click(object sender, EventArgs e)

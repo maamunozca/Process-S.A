@@ -59,7 +59,7 @@
           </header>
                         <div class="container">
                             <div class="col-lg-12">
-                                <h1>Bienvenido Funcionario :<asp:Label ID="UsuarioEncontrado" runat="server" Text="Label"></asp:Label></h1>
+                                <h1>Bienvenido Funcionario: <asp:Label ID="UsuarioEncontrado" runat="server" Text="Label"></asp:Label></h1>
                                 <asp:Label ID="EmailTransferido" runat="server" Text="Label"></asp:Label>
                                 
                                     <br />
