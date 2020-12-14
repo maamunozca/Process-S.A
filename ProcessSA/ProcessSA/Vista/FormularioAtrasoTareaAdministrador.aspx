@@ -42,7 +42,7 @@
       </li>
 
       <li class="nav-item">
-          <asp:LinkButton ID="BtnTareasFuncionario" class="nav-link" runat="server" OnClick="BtnTareasFuncionario_Click"  >Tus Tareas Asignadas</asp:LinkButton>
+          <asp:LinkButton ID="BtnTareasFuncionario" class="nav-link" runat="server" OnClick="BtnTareasFuncionario_Click"  >Tareas Funcionarios</asp:LinkButton>
       </li>
 
            
